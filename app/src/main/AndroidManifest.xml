@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.luna.myapplication">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+            android:allowBackup="true"
+            android:icon="@drawable/ic_inviter"
+            android:label="Luna"
+            android:roundIcon="@mipmap/ic_inviter"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.luna.myapplication.DiDiActivity" />
+        <activity android:name="com.luna.myapplication.CalculateActivity" />
+        <activity android:name="com.luna.myapplication.LoginActivity" />
+        <activity android:name="com.luna.myapplication.InfoActivity" />
+        <activity android:name="com.luna.myapplication.HeroActivity" />
+        <activity android:name="com.luna.myapplication.MainWeaponActivity" />
+        <activity android:name="com.luna.myapplication.DeputyWeapon" />
+    </application>
+
+</manifest>
