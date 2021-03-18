@@ -1,12 +1,16 @@
 package com.luna.myapplication;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +18,7 @@ import com.luna.myapplication.utils.ToastUtil;
 
 public class DialogActivity extends AppCompatActivity {
 
-    private Button mBtnDialog1, mBtnDialog2, mBtnDialog3, mBtnDialog4, mBtnDialog5;
+    private Button mBtnDialog1, mBtnDialog2, mBtnDialog3, mBtnDialog4, mBtnDialog5, mBtnDialog6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +29,14 @@ public class DialogActivity extends AppCompatActivity {
         mBtnDialog3 = findViewById(R.id.btn_diolog3);
         mBtnDialog4 = findViewById(R.id.btn_diolog4);
         mBtnDialog5 = findViewById(R.id.btn_diolog5);
+        mBtnDialog6 = findViewById(R.id.btn_diolog6);
         OnClick onClick = new OnClick();
         mBtnDialog1.setOnClickListener(onClick);
         mBtnDialog2.setOnClickListener(onClick);
         mBtnDialog3.setOnClickListener(onClick);
         mBtnDialog4.setOnClickListener(onClick);
         mBtnDialog5.setOnClickListener(onClick);
+        mBtnDialog6.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener {
@@ -102,18 +108,47 @@ public class DialogActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_diolog5:
                     AlertDialog.Builder builder5 = new AlertDialog.Builder(DialogActivity.this);
-                    View loginview = LayoutInflater.from(DialogActivity.this).inflate(R.layout.dialog_layout, null);
+                    View loginview = LayoutInflater.from(DialogActivity.this).inflate(R.layout.login_layout, null);
                     EditText username = loginview.findViewById(R.id.username);
                     EditText password = loginview.findViewById(R.id.password);
                     Button btnLogin = loginview.findViewById(R.id.btn_login);
                     btnLogin.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            //
+                            Log.i("dialog", "onClick: builder5 事件触发");
                         }
                     });
                     builder5.setTitle("请先登录").setView(loginview).show();
                     break;
+                case R.id.btn_diolog6:
+                    ProgressDialog progressDialog = new ProgressDialog(DialogActivity.this);
+                    // 设置提示信息
+                    progressDialog.setMessage("正在加载");
+                    // 设置弹窗标题
+                    progressDialog.setTitle("进度条");
+                    // 设置弹窗图标
+                    progressDialog.setIcon(R.drawable.username);
+                    // 能够返回
+                    progressDialog.setCancelable(true);
+                    // 点击外部返回
+                    progressDialog.setCanceledOnTouchOutside(true);
+                    // 设置进度条
+                    progressDialog.setProgress(100);
+                    // 设置进度条是否明确
+                    progressDialog.setIndeterminate(true);
+                    // 设置进度条样式
+                    // 环形精度条 ProgressDialog.STYLE_SPINNER
+                    // 水平样式的进度条 ProgressDialog.STYLE_HORIZONTAL
+                    progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                    progressDialog.setButton(ProgressDialog.BUTTON_NEGATIVE, "取消",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // progressDialog.dismiss();
+                                Toast.makeText(DialogActivity.this, "你点击了弹窗的按钮", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    progressDialog.show();
             }
         }
     }

@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button dialogButton;
 
+    private Button fileButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         heroButton = findViewById(R.id.hero);
         logButton = findViewById(R.id.log);
         dialogButton = findViewById(R.id.dialog);
+        fileButton = findViewById(R.id.file);
         setListeners();
     }
 
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         heroButton.setOnClickListener(onClick);
         logButton.setOnClickListener(onClick);
         dialogButton.setOnClickListener(onClick);
+        fileButton.setOnClickListener(onClick);
     }
 
     /**
@@ -80,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.dialog:
                     intent = new Intent(MainActivity.this, DialogActivity.class);
+                    break;
+                case R.id.file:
+                    intent = new Intent(MainActivity.this, FileActivity.class);
                     break;
             }
             startActivity(intent);

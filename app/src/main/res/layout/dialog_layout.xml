@@ -8,34 +8,41 @@
             android:id="@+id/btn_diolog1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="style1"
+            android:text="对话框"
             android:textAllCaps="false" />
 
     <Button
             android:id="@+id/btn_diolog2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="style2"
+            android:text="选择框"
             android:textAllCaps="false" />
 
     <Button
             android:id="@+id/btn_diolog3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="style3"
+            android:text="单选框"
             android:textAllCaps="false" />
 
     <Button
             android:id="@+id/btn_diolog4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="style4"
+            android:text="多选框"
             android:textAllCaps="false" />
 
     <Button
             android:id="@+id/btn_diolog5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="style5"
+            android:text="弹窗自定义"
+            android:textAllCaps="false" />
+
+    <Button
+            android:id="@+id/btn_diolog6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="进度条"
             android:textAllCaps="false" />
 </LinearLayout>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.luna.myapplication">
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <application
             android:allowBackup="true"
             android:icon="@drawable/ic_inviter"
@@ -26,6 +26,7 @@
         <activity android:name="com.luna.myapplication.DeputyWeapon" />
         <activity android:name="com.luna.myapplication.LogActivity" />
         <activity android:name="com.luna.myapplication.DialogActivity" />
+        <activity android:name="com.luna.myapplication.FileActivity" />
     </application>
 
 </manifest>
