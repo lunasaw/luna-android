@@ -17,20 +17,26 @@ public class MainActivity extends AppCompatActivity {
 
     private Button heroButton;
 
+    private Button logButton;
+
+    private Button dialogButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_layout);
 
         diDiButton = findViewById(R.id.didi);
         calculateButton = findViewById(R.id.calculate);
         loginButton = findViewById(R.id.login);
         heroButton = findViewById(R.id.hero);
+        logButton = findViewById(R.id.log);
+        dialogButton = findViewById(R.id.dialog);
         setListeners();
     }
 
-
-    /**+
+    /**
+     * +
      * 监听器方法
      */
     private void setListeners() {
@@ -39,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         calculateButton.setOnClickListener(onClick);
         loginButton.setOnClickListener(onClick);
         heroButton.setOnClickListener(onClick);
+        logButton.setOnClickListener(onClick);
+        dialogButton.setOnClickListener(onClick);
     }
 
     /**
@@ -66,9 +74,15 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.hero:
                     intent = new Intent(MainActivity.this, HeroActivity.class);
                     break;
+                // 跳转到LogLayout演示页面
+                case R.id.log:
+                    intent = new Intent(MainActivity.this, LogActivity.class);
+                    break;
+                case R.id.dialog:
+                    intent = new Intent(MainActivity.this, DialogActivity.class);
+                    break;
             }
             startActivity(intent);
         }
     }
 }
-

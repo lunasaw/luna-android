@@ -24,6 +24,8 @@
         <activity android:name="com.luna.myapplication.HeroActivity" />
         <activity android:name="com.luna.myapplication.MainWeaponActivity" />
         <activity android:name="com.luna.myapplication.DeputyWeapon" />
+        <activity android:name="com.luna.myapplication.LogActivity" />
+        <activity android:name="com.luna.myapplication.DialogActivity" />
     </application>
 
 </manifest>

@@ -26,7 +26,7 @@ public class DeputyWeapon extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.putExtra("info", new ItemInfo(50, 10, 20));
-                setResult(1, intent);
+                setResult(0, intent);
                 finish();
             }
         });

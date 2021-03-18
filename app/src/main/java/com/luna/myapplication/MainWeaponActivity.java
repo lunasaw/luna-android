@@ -27,7 +27,7 @@ public class MainWeaponActivity extends Activity implements View.OnClickListener
     public void onClick(View view) {
         Intent intent = new Intent();
         intent.putExtra("info", new ItemInfo(100, 20, 20));
-        setResult(1, intent);
+        setResult(0, intent);
         finish();
     }
 }

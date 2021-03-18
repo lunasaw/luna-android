@@ -81,7 +81,7 @@ public class HeroActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (1 == resultCode) {
+        if (0 == resultCode) {
             ItemInfo info = (ItemInfo)data.getSerializableExtra("info");
             // 更新ProgressBar的值
             updateProgress(info);

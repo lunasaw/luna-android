@@ -12,7 +12,7 @@ public class InfoActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_userinfo);
+        setContentView(R.layout.userinfo_layout);
         Intent intent = getIntent();
         String name = intent.getStringExtra("username");
         String password = intent.getStringExtra("password");
