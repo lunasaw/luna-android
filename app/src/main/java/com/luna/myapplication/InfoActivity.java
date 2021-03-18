@@ -3,9 +3,13 @@ package com.luna.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+
+import com.luna.myapplication.entity.UserDO;
+import com.luna.myapplication.utils.ShareUtils;
 
 public class InfoActivity extends Activity {
 
@@ -14,16 +18,15 @@ public class InfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.userinfo_layout);
         Intent intent = getIntent();
-        String name = intent.getStringExtra("username");
-        String password = intent.getStringExtra("password");
-        String sex = intent.getStringExtra("gender");
-
+        UserDO userDO = (UserDO)intent.getSerializableExtra("userInfo");
         TextView tvUsername = findViewById(R.id.tv_username);
         TextView tvPassword = findViewById(R.id.tv_password);
         TextView tvSex = findViewById(R.id.tv_sex);
-        //给textview控件动态设置值的方法
-        tvUsername.setText("用户名："+name);
-        tvPassword.setText("密码:"+password);
-        tvSex.setText("性别："+sex);
+        TextView remember = findViewById(R.id.is_remember);
+        // 给textview控件动态设置值的方法
+        tvUsername.setText("用户名：" + userDO.getUserName());
+        tvPassword.setText("密码:" + userDO.getPassword());
+        tvSex.setText("性别：" + userDO.getGender());
+        remember.setText("是否记住密码：" + ShareUtils.getInstance(InfoActivity.this).getBoolean("remember"));
     }
 }

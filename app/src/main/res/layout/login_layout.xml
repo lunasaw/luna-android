@@ -33,14 +33,25 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:drawablePadding="5dp"
-            android:drawableLeft="@drawable/password"/>
+            android:drawableLeft="@drawable/password" />
+
+    <CheckBox
+            android:id="@+id/is_remember"
+            android:layout_below="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:text="记住我"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
 
     <RadioGroup
             android:id="@+id/gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/password"
-            android:layout_marginTop="40dp"
+            android:layout_below="@id/is_remember"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
 
         <RadioButton

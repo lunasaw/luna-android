@@ -20,7 +20,8 @@
             android:background="@color/ivory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="密码："/>
+            android:text="密码：" />
+
     <TextView
             android:id="@+id/tv_sex"
             android:textColor="#000"
@@ -28,5 +29,14 @@
             android:background="@color/ivory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="性别："/>
+            android:text="性别：" />
+
+    <TextView
+            android:id="@+id/is_remember"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:background="@color/ivory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否记住密码：" />
 </LinearLayout>
