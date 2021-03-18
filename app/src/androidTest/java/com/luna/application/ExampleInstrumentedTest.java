@@ -1,4 +1,4 @@
-package com.luna.myapplication;
+package com.luna.application;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.luna.myapplication", appContext.getPackageName());
+        assertEquals("com.luna.application", appContext.getPackageName());
     }
 }

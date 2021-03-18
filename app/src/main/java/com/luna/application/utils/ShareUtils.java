@@ -1,10 +1,8 @@
-package com.luna.myapplication.utils;
+package com.luna.application.utils;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-
-import com.luna.myapplication.entity.UserDO;
 
 public class ShareUtils extends Activity {
 

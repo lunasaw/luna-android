@@ -1,4 +1,4 @@
-package com.luna.myapplication.utils;
+package com.luna.application.utils;
 
 import android.content.Context;
 import android.widget.Toast;

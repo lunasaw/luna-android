@@ -1,4 +1,4 @@
-package com.luna.myapplication;
+package com.luna.application;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,8 +13,6 @@ import androidx.annotation.Nullable;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,7 +43,7 @@ public class FileActivity extends Activity {
 
     class Onclick implements View.OnClickListener {
 
-        public static final String SDCARD_TEST = "/data/data/com.luna.myapplication/files/";
+        public static final String SDCARD_TEST = "/data/data/com.luna.application/files/";
         public static final String FILE_NAME   = "file.txt";
 
         @Override

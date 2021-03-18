@@ -1,4 +1,4 @@
-package com.luna.myapplication.entity;
+package com.luna.application.entity;
 
 import java.io.Serializable;
 

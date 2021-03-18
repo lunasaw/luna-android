@@ -1,13 +1,13 @@
-package com.luna.myapplication;
+package com.luna.application;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -15,8 +15,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.luna.myapplication.entity.UserDO;
-import com.luna.myapplication.utils.ShareUtils;
+import com.alibaba.fastjson.JSON;
+import com.luna.application.entity.UserDO;
+import com.luna.application.utils.ShareUtils;
 
 public class LoginActivity extends Activity {
 
@@ -40,7 +41,7 @@ public class LoginActivity extends Activity {
         ShareUtils instance = ShareUtils.getInstance(this);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
-        UserDO userDO =
+        final UserDO userDO =
             new UserDO(ShareUtils.getKey("username"), ShareUtils.getKey("password"), ShareUtils.getKey("gender"));
         username.setText(userDO.getUserName());
         password.setText(userDO.getPassword());
@@ -55,12 +56,15 @@ public class LoginActivity extends Activity {
                     return;
                 } else {
                     Intent intent = new Intent(LoginActivity.this, InfoActivity.class);
-                    intent.putExtra("userInfo", new UserDO(name, word, getSex()));
+                    UserDO user = new UserDO(name, word, getSex());
+                    intent.putExtra("userInfo", user);
                     if (remember.isChecked()) {
                         ShareUtils.putString("username", name);
                         ShareUtils.putString("password", word);
                         ShareUtils.putString("gender", getSex());
                         ShareUtils.putBoolean("remember", true);
+                        ShareUtils.putString("userInfo", JSON.toJSONString(user));
+                        Log.i("login", "onCreate: " + JSON.toJSONString(user));
                     } else {
                         ShareUtils.putString("username", "");
                         ShareUtils.putString("password", "");

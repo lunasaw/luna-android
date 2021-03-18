@@ -1,4 +1,4 @@
-package com.luna.myapplication;
+package com.luna.application;
 
 import org.junit.Test;
 

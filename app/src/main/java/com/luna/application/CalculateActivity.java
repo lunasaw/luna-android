@@ -1,11 +1,11 @@
-package com.luna.myapplication;
+package com.luna.application;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
- * @Package: com.luna.myapplication
+ * @Package: com.luna.application
  * @ClassName: CalculateActivity
  * @Author: luna
  * @CreateTime: 2021/3/16 17:09

@@ -1,15 +1,14 @@
-package com.luna.myapplication;
+package com.luna.application;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.luna.myapplication.entity.UserDO;
-import com.luna.myapplication.utils.ShareUtils;
+import com.luna.application.entity.UserDO;
+import com.luna.application.utils.ShareUtils;
 
 public class InfoActivity extends Activity {
 

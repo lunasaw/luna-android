@@ -1,4 +1,4 @@
-package com.luna.myapplication;
+package com.luna.application;
 
 import androidx.appcompat.app.AppCompatActivity;
 
