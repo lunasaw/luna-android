@@ -1,6 +1,8 @@
 package com.luna.application.listView;
 
 import android.content.Context;
+import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,32 +10,43 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
+
 import com.bumptech.glide.Glide;
 import com.luna.application.R;
+import com.luna.application.entity.ImageItem;
+import com.luna.application.utils.DateUtil;
+
+import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
 
-    private Context        mContext;
-    private LayoutInflater mLayoutInflater;
+    public static final String LIST_VIEW = "listView";
+    private Context            mContext;
+    private LayoutInflater     mLayoutInflater;
+    private int                size;
+    private List<ImageItem>    list;
 
-    public ListViewAdapter(Context context) {
+    public ListViewAdapter(Context context, List<ImageItem> list) {
         this.mContext = context;
+        this.size = list.size();
+        this.list = list;
         mLayoutInflater = LayoutInflater.from(context);
     }
 
     @Override
     public int getCount() {
-        return 10;
+        return size;
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return list.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return list.get(i).getId();
     }
 
     static class ViewHolder {
@@ -41,9 +54,12 @@ public class ListViewAdapter extends BaseAdapter {
         public TextView  tvTitle, tvTime, tvContent;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = null;
+        ImageItem imageItem = list.get(i);
+
         if (view == null) {
             view = mLayoutInflater.inflate(R.layout.list_item_layout, null);
             holder = new ViewHolder();
@@ -54,10 +70,10 @@ public class ListViewAdapter extends BaseAdapter {
             view.setTag(holder);
         } else
             holder = (ViewHolder)view.getTag();
-        holder.tvTitle.setText("安卓应用开发");
-        holder.tvTime.setText("2021-3-19");
-        holder.tvContent.setText("面朝大海，春暖花开");
-        Glide.with(mContext).load("https://www.isczy.tk/luna-image-bed/img/20210316141051.png").into(holder.imageView);
+        holder.tvTitle.setText(imageItem.getTitle());
+        holder.tvTime.setText(DateUtil.dateToString(imageItem.getDate(), DateUtil.DatePattern.ONLY_DAY));
+        holder.tvContent.setText(imageItem.getContent());
+        Glide.with(mContext).load(imageItem.getUrl()).into(holder.imageView);
         return view;
     }
 }
