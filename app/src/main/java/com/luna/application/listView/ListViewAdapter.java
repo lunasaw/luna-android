@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 
-import com.bumptech.glide.Glide;
 import com.luna.application.R;
 import com.luna.application.entity.ImageItem;
 import com.luna.application.utils.DateUtil;
@@ -74,7 +73,6 @@ public class ListViewAdapter extends BaseAdapter {
         holder.tvTitle.setText(imageItem.getTitle());
         holder.tvTime.setText(DateUtil.dateToString(imageItem.getDate(), DateUtil.DatePattern.ONLY_DAY));
         holder.tvContent.setText(imageItem.getContent());
-        // Glide.with(mContext).load(imageItem.getUrl()).into(holder.imageView);
         holder.imageView.setImageResource(imageItem.getDrawable());
         return view;
     }
