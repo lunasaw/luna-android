@@ -1,5 +1,7 @@
 package com.luna.application.listView;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -11,15 +13,20 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.common.collect.Lists;
+import com.luna.application.DialogActivity;
 import com.luna.application.R;
 import com.luna.application.entity.ImageItem;
 import com.luna.application.utils.DateUtil;
+import com.luna.application.utils.ToastUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListViewActivity extends AppCompatActivity {
     public static final int INT = 20;
     private ListView        listView;
+
+    private List<ImageItem> imageItems;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -28,25 +35,50 @@ public class ListViewActivity extends AppCompatActivity {
         setContentView(R.layout.list_view_layout);
 
         listView = findViewById(R.id.lv_1);
-        List<ImageItem> imageItems = imageItemList();
+        imageItems = imageItemList();
         listView.setAdapter(new ListViewAdapter(ListViewActivity.this, imageItems));
 
         // 点击事件
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(ListViewActivity.this, "点击 pos: " + i, Toast.LENGTH_SHORT).show();
-            }
-        });
+        listView.setOnItemClickListener(new Onclick());
 
         // 长按事件
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(ListViewActivity.this, "长按 pos: " + i, Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
+        listView.setOnItemLongClickListener(new LongOnclick());
+    }
+
+    class Onclick implements AdapterView.OnItemClickListener {
+
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(ListViewActivity.this);
+            builder.setTitle("请回答：").setMessage("你喜欢" + imageItems.get(i).getTitle() + "吗？")
+                .setIcon(imageItems.get(i).getDrawable())
+                .setPositiveButton("喜欢", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ToastUtil.showMsg(ListViewActivity.this, "真的吗？");
+                    }
+                }).setNeutralButton("还行", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ToastUtil.showMsg(ListViewActivity.this, "你确定吗？");
+                    }
+                }).setNegativeButton("不喜欢", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ToastUtil.showMsg(ListViewActivity.this, "为什么呢？");
+                    }
+                }).show();
+            Toast.makeText(ListViewActivity.this, "点击 pos: " + i, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    class LongOnclick implements AdapterView.OnItemLongClickListener {
+
+        @Override
+        public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+            Toast.makeText(ListViewActivity.this, "长按 pos: " + i, Toast.LENGTH_SHORT).show();
+            return true;
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)

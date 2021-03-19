@@ -71,4 +71,16 @@ public class ImageItem {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    @Override
+    public String toString() {
+        return "ImageItem{" +
+            "id='" + id + '\'' +
+            ", Content='" + Content + '\'' +
+            ", url='" + url + '\'' +
+            ", drawable=" + drawable +
+            ", date=" + date +
+            ", title='" + title + '\'' +
+            '}';
+    }
 }

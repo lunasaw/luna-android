@@ -68,8 +68,9 @@ public class ListViewAdapter extends BaseAdapter {
             holder.tvTime = view.findViewById(R.id.tv_time);
             holder.tvContent = view.findViewById(R.id.tv_content);
             view.setTag(holder);
-        } else
+        } else {
             holder = (ViewHolder)view.getTag();
+        }
         holder.tvTitle.setText(imageItem.getTitle());
         holder.tvTime.setText(DateUtil.dateToString(imageItem.getDate(), DateUtil.DatePattern.ONLY_DAY));
         holder.tvContent.setText(imageItem.getContent());
