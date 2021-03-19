@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.luna.application.listView.ListViewActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button diDiButton;
@@ -23,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button fileButton;
 
+    private Button listViewButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         logButton = findViewById(R.id.log);
         dialogButton = findViewById(R.id.dialog);
         fileButton = findViewById(R.id.file);
+        listViewButton = findViewById(R.id.listView);
         setListeners();
     }
 
@@ -51,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         logButton.setOnClickListener(onClick);
         dialogButton.setOnClickListener(onClick);
         fileButton.setOnClickListener(onClick);
+        listViewButton.setOnClickListener(onClick);
     }
 
     /**
@@ -87,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.file:
                     intent = new Intent(MainActivity.this, FileActivity.class);
+                    break;
+                case R.id.listView:
+                    intent = new Intent(MainActivity.this, ListViewActivity.class);
                     break;
             }
             startActivity(intent);

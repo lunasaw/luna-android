@@ -69,6 +69,15 @@
                 android:layout_marginTop="10dp"
                 android:text="FilegLayout"
                 android:textSize="18dp" />
+
+        <Button
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grassgreen"
+                android:layout_marginTop="10dp"
+                android:text="listViewLayout"
+                android:textSize="18dp" />
     </LinearLayout>
 
 </ScrollView>

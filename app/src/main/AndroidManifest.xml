@@ -29,6 +29,7 @@
         <activity android:name="com.luna.application.LogActivity" />
         <activity android:name="com.luna.application.DialogActivity" />
         <activity android:name="com.luna.application.FileActivity" />
+        <activity android:name="com.luna.application.listView.ListViewActivity" />
     </application>
 
 </manifest>
