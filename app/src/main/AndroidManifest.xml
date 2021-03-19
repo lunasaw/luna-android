@@ -30,6 +30,7 @@
         <activity android:name="com.luna.application.DialogActivity" />
         <activity android:name="com.luna.application.FileActivity" />
         <activity android:name="com.luna.application.listView.ListViewActivity" />
+        <activity android:name="com.luna.application.listView.ExamActivity" />
     </application>
 
 </manifest>

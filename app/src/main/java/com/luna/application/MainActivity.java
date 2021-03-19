@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.luna.application.listView.ExamActivity;
 import com.luna.application.listView.ListViewActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button listViewButton;
 
+    private Button listViewExamButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         dialogButton = findViewById(R.id.dialog);
         fileButton = findViewById(R.id.file);
         listViewButton = findViewById(R.id.listView);
+        listViewExamButton = findViewById(R.id.listViewExam);
         setListeners();
     }
 
@@ -57,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         dialogButton.setOnClickListener(onClick);
         fileButton.setOnClickListener(onClick);
         listViewButton.setOnClickListener(onClick);
+        listViewExamButton.setOnClickListener(onClick);
     }
 
     /**
@@ -88,14 +93,21 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.log:
                     intent = new Intent(MainActivity.this, LogActivity.class);
                     break;
+                // 跳转到DialogLayout演示页面
                 case R.id.dialog:
                     intent = new Intent(MainActivity.this, DialogActivity.class);
                     break;
+                // 跳转到fileLayout演示页面
                 case R.id.file:
                     intent = new Intent(MainActivity.this, FileActivity.class);
                     break;
+                // 跳转到listViewLayout演示页面
                 case R.id.listView:
                     intent = new Intent(MainActivity.this, ListViewActivity.class);
+                    break;
+                // 跳转到listViewExamLayout演示页面
+                case R.id.listViewExam:
+                    intent = new Intent(MainActivity.this, ExamActivity.class);
                     break;
             }
             startActivity(intent);
