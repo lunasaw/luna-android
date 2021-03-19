@@ -4,29 +4,39 @@ import java.util.Date;
 
 public class ImageItem {
 
-    private int    id;
+    private String id;
 
     private String Content;
 
     private String url;
 
+    private int    drawable;
+
     private Date   date;
 
     private String title;
 
-    public ImageItem(int id, String content, String url, Date date, String title) {
+    public int getDrawable() {
+        return drawable;
+    }
+
+    public void setDrawable(int drawable) {
+        this.drawable = drawable;
+    }
+
+    public ImageItem(String id, String content, int drawable, Date date, String title) {
         this.id = id;
         Content = content;
-        this.url = url;
+        this.drawable = drawable;
         this.date = date;
         this.title = title;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

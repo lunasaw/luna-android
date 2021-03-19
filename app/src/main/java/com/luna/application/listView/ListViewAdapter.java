@@ -46,7 +46,7 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
-        return list.get(i).getId();
+        return i;
     }
 
     static class ViewHolder {
@@ -73,7 +73,8 @@ public class ListViewAdapter extends BaseAdapter {
         holder.tvTitle.setText(imageItem.getTitle());
         holder.tvTime.setText(DateUtil.dateToString(imageItem.getDate(), DateUtil.DatePattern.ONLY_DAY));
         holder.tvContent.setText(imageItem.getContent());
-        Glide.with(mContext).load(imageItem.getUrl()).into(holder.imageView);
+        // Glide.with(mContext).load(imageItem.getUrl()).into(holder.imageView);
+        holder.imageView.setImageResource(imageItem.getDrawable());
         return view;
     }
 }
