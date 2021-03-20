@@ -1,19 +1,13 @@
 package com.luna.application.listView;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.luna.application.R;
-import com.luna.application.entity.ImageItem;
-import com.luna.application.utils.DateUtil;
-import com.luna.application.utils.ToastUtil;
+
 
 import java.util.List;
 
@@ -27,7 +21,7 @@ public class ExamAdapter extends BaseAdapter {
     public ExamAdapter(Context context, List<String> listStr) {
         this.context = context;
         this.list = listStr;
-        layoutInflater = LayoutInflater.from(context);
+        layoutInflater = LayoutInflater.from(this.context);
     }
 
     @Override

@@ -52,7 +52,7 @@ public class HeroActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HeroActivity.this, MainWeaponActivity.class);
-                startActivityForResult(intent,1);
+                startActivityForResult(intent, 0);
             }
         });
 
@@ -61,7 +61,7 @@ public class HeroActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HeroActivity.this, DeputyWeapon.class);
-                startActivityForResult(intent,1);
+                startActivityForResult(intent, 0);
             }
         });
 
