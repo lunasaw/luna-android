@@ -1,4 +1,4 @@
-package com.luna.application;
+package com.luna.application.file;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+
+import com.luna.application.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

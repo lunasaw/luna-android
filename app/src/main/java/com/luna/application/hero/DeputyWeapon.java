@@ -1,10 +1,13 @@
-package com.luna.application;
+package com.luna.application.hero;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.luna.application.R;
+import com.luna.application.hero.ItemInfo;
 
 public class DeputyWeapon extends Activity {
     private Button iron;

@@ -1,4 +1,4 @@
-package com.luna.application;
+package com.luna.application.login;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.luna.application.R;
 import com.luna.application.entity.UserDO;
 import com.luna.application.utils.ShareUtils;
 

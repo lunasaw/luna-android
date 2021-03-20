@@ -1,4 +1,4 @@
-package com.luna.application;
+package com.luna.application.dailog;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.luna.application.R;
 import com.luna.application.utils.ToastUtil;
 
 public class DialogActivity extends AppCompatActivity {

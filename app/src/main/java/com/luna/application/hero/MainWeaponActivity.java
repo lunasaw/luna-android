@@ -1,4 +1,4 @@
-package com.luna.application;
+package com.luna.application.hero;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
+
+import com.luna.application.R;
 
 public class MainWeaponActivity extends Activity implements View.OnClickListener{
 

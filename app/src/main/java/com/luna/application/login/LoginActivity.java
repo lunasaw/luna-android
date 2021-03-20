@@ -1,4 +1,4 @@
-package com.luna.application;
+package com.luna.application.login;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 import com.alibaba.fastjson.JSON;
+import com.luna.application.R;
 import com.luna.application.entity.UserDO;
 import com.luna.application.utils.ShareUtils;
 

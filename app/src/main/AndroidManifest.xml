@@ -19,18 +19,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.luna.application.DiDiActivity" />
-        <activity android:name="com.luna.application.CalculateActivity" />
-        <activity android:name="com.luna.application.LoginActivity" />
-        <activity android:name="com.luna.application.InfoActivity" />
-        <activity android:name="com.luna.application.HeroActivity" />
-        <activity android:name="com.luna.application.MainWeaponActivity" />
-        <activity android:name="com.luna.application.DeputyWeapon" />
+        <activity android:name="com.luna.application.didi.DiDiActivity" />
+        <activity android:name="com.luna.application.calculate.CalculateActivity" />
+        <activity android:name="com.luna.application.login.LoginActivity" />
+        <activity android:name="com.luna.application.login.InfoActivity" />
+        <activity android:name="com.luna.application.hero.HeroActivity" />
+        <activity android:name="com.luna.application.hero.MainWeaponActivity" />
+        <activity android:name="com.luna.application.hero.DeputyWeapon" />
         <activity android:name="com.luna.application.LogActivity" />
-        <activity android:name="com.luna.application.DialogActivity" />
-        <activity android:name="com.luna.application.FileActivity" />
+        <activity android:name="com.luna.application.dailog.DialogActivity" />
+        <activity android:name="com.luna.application.file.FileActivity" />
         <activity android:name="com.luna.application.listView.ListViewActivity" />
-        <activity android:name="com.luna.application.listView.ExamActivity" />
+        <activity android:name="com.luna.application.listView.exam.ExamActivity" />
     </application>
 
 </manifest>

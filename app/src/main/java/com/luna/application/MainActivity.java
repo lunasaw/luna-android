@@ -7,8 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.luna.application.listView.ExamActivity;
+import com.luna.application.calculate.CalculateActivity;
+import com.luna.application.didi.DiDiActivity;
+import com.luna.application.dailog.DialogActivity;
+import com.luna.application.file.FileActivity;
+import com.luna.application.hero.HeroActivity;
+import com.luna.application.listView.exam.ExamActivity;
 import com.luna.application.listView.ListViewActivity;
+import com.luna.application.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 

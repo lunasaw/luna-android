@@ -1,21 +1,24 @@
-package com.luna.application;
+package com.luna.application.didi;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.luna.application.R;
+
 /**
  * @Package: com.luna.application
- * @ClassName: CalculateActivity
+ * @ClassName: DiDiActivity
  * @Author: luna
- * @CreateTime: 2021/3/16 17:09
+ * @CreateTime: 2021/3/16 16:28
  * @Description:
  */
-public class CalculateActivity extends AppCompatActivity {
+public class DiDiActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calculate_layout);
+        setContentView(R.layout.didi_layout);
     }
+
 }

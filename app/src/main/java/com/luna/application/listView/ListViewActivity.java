@@ -13,7 +13,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.common.collect.Lists;
-import com.luna.application.DialogActivity;
 import com.luna.application.R;
 import com.luna.application.entity.ImageItem;
 import com.luna.application.utils.DateUtil;

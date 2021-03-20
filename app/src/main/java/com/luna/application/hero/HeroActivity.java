@@ -1,4 +1,4 @@
-package com.luna.application;
+package com.luna.application.hero;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+
+import com.luna.application.R;
 
 import java.io.Serializable;
 import java.util.HashMap;
