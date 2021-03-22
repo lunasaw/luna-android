@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/gray_cc"
+        android:padding="15dp"
+        tools:context=".MainActivity">
+
+    <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="请输入电话号码"
+            />
+
+    <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="查询"
+
+            />
+
+    <TextView
+            android:id="@+id/tv_pro"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:text="省份："
+            android:textSize="24sp"
+            android:gravity="center_vertical"
+            />
+
+    <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="城市："
+            android:textSize="24sp"
+            android:gravity="center_vertical"
+            />
+    <TextView
+            android:id="@+id/tv_areacode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="城市码："
+            android:textSize="24sp"
+            android:gravity="center_vertical"
+            />
+    <TextView
+            android:id="@+id/tv_zip"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="邮编："
+            android:textSize="24sp"
+            android:gravity="center_vertical"
+            />
+    <TextView
+            android:id="@+id/tv_company"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="所属公司："
+            android:textSize="24sp"
+            android:gravity="center_vertical"
+            />
+
+
+</LinearLayout>

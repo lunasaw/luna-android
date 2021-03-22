@@ -15,6 +15,9 @@ import com.luna.application.hero.HeroActivity;
 import com.luna.application.listView.exam.ExamActivity;
 import com.luna.application.listView.ListViewActivity;
 import com.luna.application.login.LoginActivity;
+import com.luna.application.orcreate.OrCreateActivity;
+import com.luna.application.searchphone.SearchPhoneActivity;
+import com.luna.application.weather.BirthHoroscope;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
     private Button listViewExamButton;
 
+    private Button birthButton;
+
+    private Button orCreateButton;
+
+    private Button searchPhoneButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
         fileButton = findViewById(R.id.file);
         listViewButton = findViewById(R.id.listView);
         listViewExamButton = findViewById(R.id.listViewExam);
+        birthButton = findViewById(R.id.birth);
+        orCreateButton  = findViewById(R.id.orCreate);
+        searchPhoneButton = findViewById(R.id.searchPhone);
         setListeners();
     }
 
@@ -68,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
         fileButton.setOnClickListener(onClick);
         listViewButton.setOnClickListener(onClick);
         listViewExamButton.setOnClickListener(onClick);
+        birthButton.setOnClickListener(onClick);
+        orCreateButton.setOnClickListener(onClick);
+        searchPhoneButton.setOnClickListener(onClick);
     }
 
     /**
@@ -114,6 +129,18 @@ public class MainActivity extends AppCompatActivity {
                 // 跳转到listViewExamLayout演示页面
                 case R.id.listViewExam:
                     intent = new Intent(MainActivity.this, ExamActivity.class);
+                    break;
+                // 跳转到birthExamLayout演示页面
+                case R.id.birth:
+                    intent = new Intent(MainActivity.this, BirthHoroscope.class);
+                    break;
+                // 跳转到listViewExamLayout演示页面
+                case R.id.orCreate:
+                    intent = new Intent(MainActivity.this, OrCreateActivity.class);
+                    break;
+                // 跳转到listViewExamLayout演示页面
+                case R.id.searchPhone:
+                    intent = new Intent(MainActivity.this, SearchPhoneActivity.class);
                     break;
             }
             startActivity(intent);

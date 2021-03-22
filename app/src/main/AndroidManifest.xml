@@ -12,25 +12,28 @@
             android:roundIcon="@mipmap/ic_inviter"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.luna.application.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.luna.application.didi.DiDiActivity" />
-        <activity android:name="com.luna.application.calculate.CalculateActivity" />
-        <activity android:name="com.luna.application.login.LoginActivity" />
-        <activity android:name="com.luna.application.login.InfoActivity" />
-        <activity android:name="com.luna.application.hero.HeroActivity" />
-        <activity android:name="com.luna.application.hero.MainWeaponActivity" />
-        <activity android:name="com.luna.application.hero.DeputyWeapon" />
-        <activity android:name="com.luna.application.LogActivity" />
-        <activity android:name="com.luna.application.dailog.DialogActivity" />
-        <activity android:name="com.luna.application.file.FileActivity" />
-        <activity android:name="com.luna.application.listView.ListViewActivity" />
-        <activity android:name="com.luna.application.listView.exam.ExamActivity" />
+        <activity android:name=".didi.DiDiActivity" />
+        <activity android:name=".calculate.CalculateActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login.InfoActivity" />
+        <activity android:name=".hero.HeroActivity" />
+        <activity android:name=".hero.MainWeaponActivity" />
+        <activity android:name=".hero.DeputyWeapon" />
+        <activity android:name=".LogActivity" />
+        <activity android:name=".dailog.DialogActivity" />
+        <activity android:name=".file.FileActivity" />
+        <activity android:name=".listView.ListViewActivity" />
+        <activity android:name=".listView.exam.ExamActivity" />
+        <activity android:name=".weather.BirthHoroscope" />
+        <activity android:name=".orcreate.OrCreateActivity" />
+        <activity android:name=".searchphone.SearchPhoneActivity" />
     </application>
 
 </manifest>

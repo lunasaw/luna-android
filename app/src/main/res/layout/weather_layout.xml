@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@color/gray">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+        <EditText
+                android:id="@+id/et_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:hint="请输入年份"></EditText>
+
+        <EditText
+                android:id="@+id/et_month"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="#fff"
+                android:hint="请输入月份"></EditText>
+
+        <EditText
+                android:id="@+id/et_day"
+                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:textColor="#fff"
+                android:hint="请输入日子"></EditText>
+
+        <EditText
+                android:id="@+id/et_hour"
+                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:textColor="#fff"
+                android:hint="请输入时间"></EditText>
+
+        <Button
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:id="@+id/btn_commit"
+                android:text="计算"></Button>
+
+        <TextView
+                android:id="@+id/tv_eight"
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:text="您的八字:"></TextView>
+        <TextView
+                android:id="@+id/tv_five"
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:text="您的五行"></TextView>
+        <TextView
+                android:id="@+id/tv_star"
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:text="您的星座"></TextView>
+        <TextView
+                android:id="@+id/tv_animal"
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:text="您的属相"></TextView>
+    </LinearLayout>
+</LinearLayout>
