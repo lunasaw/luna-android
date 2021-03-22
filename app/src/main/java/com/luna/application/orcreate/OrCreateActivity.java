@@ -54,7 +54,7 @@ public class OrCreateActivity extends AppCompatActivity {
         });
     }
 
-    private String getUrl(String type, String fgcolor, String width, String margin, String content) {
-        return String.format(ApiKey.QR_CODE, type, fgcolor, width, margin, ApiKey.KEY);
+    private String getUrl(String type, String fgcolor, String width, String margin, String text) {
+        return String.format(ApiKey.QR_CODE, type, fgcolor, width, margin, text, ApiKey.KEY);
     }
 }
