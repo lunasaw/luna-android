@@ -9,24 +9,23 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.luna.application.R;
 import com.luna.application.api.ApiKey;
 import com.luna.application.utils.HttpUtil;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.luna.application.utils.HttpUtils;
+import com.luna.application.utils.ToastUtil;
 
 public class SearchPhoneActivity extends AppCompatActivity {
 
     private EditText etPhone;
-    private Button btnSubmit;
+    private Button   btnSubmit;
     private TextView textView;
     private TextView textView1;
     private TextView textView2;
     private TextView textView3;
     private TextView textView4;
-    private String key = "45377b7f6660c4f780b28d843d5e3da6";
-    private String url = "http://apis.juhe.cn/mobile/get?phone=%s&key=%s";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,50 +44,36 @@ public class SearchPhoneActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String phone = etPhone.getText().toString();
-                String endUrl = getUrl(phone);
-                getEnd(endUrl);
+                get(getUrl(phone));
             }
         });
 
-
-
-
     }
 
-    private void getEnd(String endUrl) {
-
-        HttpUtil.getUrl2Net(this, endUrl, new HttpUtil.OnHttpRepsonLinstener() {
+    private void get(String url) {
+        HttpUtil.get(this, url, new HttpUtil.OnHttpResponseListener() {
             @Override
             public void onGetString(String json) {
                 getParse(json);
+                Log.i("TAG", "onGetString: " + json);
             }
         });
     }
 
-    private void getParse(String json)  {
-        try {
-            JSONObject jsonObject = new JSONObject(json);
-            JSONObject result = jsonObject.getJSONObject("result");
-
-            String province = result.getString("province");
-            String city = result.getString("city");
-            String areacode = result.getString("areacode");
-            String zip = result.getString("zip");
-            String company = result.getString("company");
-
-            textView.setText("省份："+province);
-            textView1.setText("城市："+city);
-            textView2.setText("地区码："+areacode);
-            textView3.setText("邮编："+zip);
-            textView4.setText("所属公司："+company);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
+    private void getParse(String json) {
+        PhoneInfo result = JSON.parseObject(JSONObject.parseObject(json).getString("result"), PhoneInfo.class);
+        if (result != null) {
+            textView.setText("省份：" + result.getProvince());
+            textView1.setText("城市：" + result.getCity());
+            textView2.setText("地区码：" + result.getAreacode());
+            textView3.setText("邮编：" + result.getZip());
+            textView4.setText("所属公司：" + result.getCompany());
+        } else {
+            ToastUtil.showMsg(SearchPhoneActivity.this, "电话不能为空");
         }
-
     }
 
     private String getUrl(String phone) {
-        return String.format(ApiKey.KEY_TWO, phone, ApiKey.SEARCH_PHONE);
+        return String.format(ApiKey.SEARCH_PHONE, phone, ApiKey.KEY_TWO);
     }
 }

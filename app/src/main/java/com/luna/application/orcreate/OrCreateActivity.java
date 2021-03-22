@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.luna.application.R;
 import com.luna.application.api.ApiKey;
 import com.luna.application.utils.HttpUtil;
+import com.luna.application.utils.HttpUtils;
 
 public class OrCreateActivity extends AppCompatActivity {
 
@@ -29,8 +30,8 @@ public class OrCreateActivity extends AppCompatActivity {
         editText = findViewById(R.id.or_edit);
         button = findViewById(R.id.or_btn);
         button.setOnClickListener(new Onclick());
-        url = getUrl("2", "00b7ee", "90", "5", editText.getText().toString());
         Log.i("TAG", "onCreate: " + url);
+
 
     }
 
@@ -38,20 +39,23 @@ public class OrCreateActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View view) {
-            getEnd(url);
+            url = getUrl("2", "00b7ee", "90", "5", editText.getText().toString());
+            get(url);
         }
     }
 
-    private void getEnd(String endUrl) {
-        HttpUtil.getUrl2Net(this, endUrl, new HttpUtil.OnHttpRepsonLinstener() {
+    private void get(String url) {
+        HttpUtil.get(this, url, new HttpUtil.OnHttpResponseListener() {
             @Override
             public void onGetString(String json) {
-                Log.e("TAG", json);
                 parseJson(json);
+                Log.i("TAG", "onGetString: " + json);
             }
-
-            private void parseJson(String json) {}
         });
+    }
+
+    private void parseJson(String json) {
+
     }
 
     private String getUrl(String type, String fgcolor, String width, String margin, String text) {

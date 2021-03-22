@@ -13,7 +13,8 @@
             android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="请输入电话号码"
+            android:hint="请输入电话"
+            android:text="15696756582"
             />
 
     <Button

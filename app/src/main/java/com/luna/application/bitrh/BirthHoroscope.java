@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.luna.application.R;
 import com.luna.application.api.ApiKey;
-import com.luna.application.utils.HttpUtil;
+import com.luna.application.utils.HttpUtils;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -56,7 +56,7 @@ public class BirthHoroscope extends AppCompatActivity {
     }
 
     private void getEnd(String endUrl) {
-        HttpUtil.getUrl2Net(this, endUrl, new HttpUtil.OnHttpRepsonLinstener() {
+        HttpUtils.getUrl2Net(this, endUrl, new HttpUtils.OnHttpRepsonLinstener() {
             @Override
             public void onGetString(String json) {
                 Log.e("TAG", json);
