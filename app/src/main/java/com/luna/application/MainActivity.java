@@ -17,7 +17,7 @@ import com.luna.application.listView.ListViewActivity;
 import com.luna.application.login.LoginActivity;
 import com.luna.application.orcreate.OrCreateActivity;
 import com.luna.application.searchphone.SearchPhoneActivity;
-import com.luna.application.weather.BirthHoroscope;
+import com.luna.application.bitrh.BirthHoroscope;
 
 public class MainActivity extends AppCompatActivity {
 

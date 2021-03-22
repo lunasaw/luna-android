@@ -1,4 +1,4 @@
-package com.luna.application.weather;
+package com.luna.application.bitrh;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -66,7 +66,7 @@ public class BirthHoroscope extends AppCompatActivity {
     }
 
     private String getUrl(String year, String month, String day, String hour) {
-        return String.format(ApiKey.BIRTH_COMPUTER, year, month, day, hour, ApiKey.KEY);
+        return String.format(ApiKey.BIRTH_COMPUTER, year, month, day, hour, ApiKey.KEY_ONE);
     }
 
     public void parseJson(String json) {

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.luna.application.R;
+import com.luna.application.api.ApiKey;
 import com.luna.application.utils.HttpUtil;
 
 import org.json.JSONException;
@@ -88,9 +89,6 @@ public class SearchPhoneActivity extends AppCompatActivity {
     }
 
     private String getUrl(String phone) {
-        String mUrl = String.format(url, phone, key);
-        Log.e("TAG",mUrl);
-
-        return mUrl;
+        return String.format(ApiKey.KEY_TWO, phone, ApiKey.SEARCH_PHONE);
     }
 }
