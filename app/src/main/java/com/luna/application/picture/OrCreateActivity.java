@@ -1,4 +1,4 @@
-package com.luna.application.qrcodecreate;
+package com.luna.application.picture;
 
 import android.os.Bundle;
 import android.util.Log;

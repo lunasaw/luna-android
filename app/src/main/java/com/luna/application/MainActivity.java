@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.luna.application.calculate.CalculateActivity;
-import com.luna.application.database.DataBaseActivity;
 import com.luna.application.didi.DiDiActivity;
 import com.luna.application.dialog.DialogActivity;
 import com.luna.application.file.FileActivity;
@@ -16,7 +15,7 @@ import com.luna.application.hero.HeroActivity;
 import com.luna.application.views.exam.ExamActivity;
 import com.luna.application.views.ListViewActivity;
 import com.luna.application.login.LoginActivity;
-import com.luna.application.qrcodecreate.OrCreateActivity;
+import com.luna.application.picture.OrCreateActivity;
 import com.luna.application.register.RegisterActivity;
 import com.luna.application.smartphone.SearchPhoneActivity;
 import com.luna.application.birth.BirthHoroscope;
@@ -49,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Button searchPhoneButton;
 
-    private Button dataBaseButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
         birthButton = findViewById(R.id.birth);
         orCreateButton = findViewById(R.id.orCreate);
         searchPhoneButton = findViewById(R.id.searchPhone);
-        dataBaseButton = findViewById(R.id.database);
         registerButton = findViewById(R.id.register);
         setListeners();
     }
@@ -91,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
         birthButton.setOnClickListener(onClick);
         orCreateButton.setOnClickListener(onClick);
         searchPhoneButton.setOnClickListener(onClick);
-        dataBaseButton.setOnClickListener(onClick);
         registerButton.setOnClickListener(onClick);
     }
 
@@ -151,9 +146,6 @@ public class MainActivity extends AppCompatActivity {
                 // 跳转到searchPhone演示页面
                 case R.id.searchPhone:
                     intent = new Intent(MainActivity.this, SearchPhoneActivity.class);
-                    break;
-                case R.id.database:
-                    intent = new Intent(MainActivity.this, DataBaseActivity.class);
                     break;
                 case R.id.register:
                     intent = new Intent(MainActivity.this, RegisterActivity.class);

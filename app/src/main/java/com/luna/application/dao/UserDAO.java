@@ -1,9 +1,10 @@
-package com.luna.application.database.dao;
+package com.luna.application.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.luna.application.entity.UserDO;
@@ -14,9 +15,9 @@ import java.util.List;
 
 public class UserDAO {
 
-    public static final String USER_DAO = "UserDAO";
-    public static final String TB_USER  = "tb_user";
-    private SQLiteDatabase     sqLiteDatabase;
+    public static final String    USER_DAO = "UserDAO";
+    public static final String    TB_USER  = "tb_user";
+    private static SQLiteDatabase sqLiteDatabase;
 
     public UserDAO(Context context) {
         SQLiteHelper sqLiteHelper = new SQLiteHelper(context);
@@ -35,7 +36,7 @@ public class UserDAO {
     public List<UserDO> query(String username) {
         Log.i(USER_DAO, "query: " + username);
         Cursor cursor =
-            sqLiteDatabase.query(TB_USER, new String[] {"id", "username", "password", "gender"}, "username=? ",
+            sqLiteDatabase.query(TB_USER, new String[] {"id", "username", "password", "gender"}, "username=?",
                 new String[] {username}, null, null, null);
         List<UserDO> users = new ArrayList<>();
         while (cursor.moveToNext()) {
@@ -57,7 +58,7 @@ public class UserDAO {
         return users;
     }
 
-    public List<UserDO> query(UserDO userDO) {
+    public UserDO query(UserDO userDO) {
         Cursor cursor =
             sqLiteDatabase.query(TB_USER, new String[] {"id", "username", "password", "gender"},
                 "username=? and password=?",
@@ -67,7 +68,7 @@ public class UserDAO {
             users.add(new UserDO(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3)));
         }
         Log.i(USER_DAO, "query: " + users);
-        return users;
+        return users.size() == 1 ? users.get(0) : null;
     }
 
     public boolean delete(String username) {

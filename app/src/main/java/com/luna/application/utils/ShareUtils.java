@@ -33,15 +33,15 @@ public class ShareUtils extends Activity {
         return editor.commit();
     }
 
-    public static String getKey(String key) {
+    public String getKey(String key) {
         return sharedPreferences.getString(key, "");
     }
 
-    public static boolean getBoolean(String key) {
+    public  boolean getBoolean(String key) {
         return sharedPreferences.getBoolean(key, false);
     }
 
-    public static boolean putBoolean(String key, boolean b) {
+    public  boolean putBoolean(String key, boolean b) {
         return editor.putBoolean(key, b).commit();
     }
 

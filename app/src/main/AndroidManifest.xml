@@ -7,9 +7,9 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@drawable/ic_inviter"
+            android:icon="@drawable/qq_di_zhu"
             android:label="Luna"
-            android:roundIcon="@mipmap/ic_inviter"
+            android:roundIcon="@drawable/qq_di_zhu"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -32,10 +32,9 @@
         <activity android:name=".views.ListViewActivity" />
         <activity android:name=".views.exam.ExamActivity" />
         <activity android:name=".birth.BirthHoroscope" />
-        <activity android:name=".qrcodecreate.OrCreateActivity" />
+        <activity android:name=".picture.OrCreateActivity" />
         <activity android:name=".smartphone.SearchPhoneActivity" />
-        <activity android:name=".database.DataBaseActivity" />
-        <activity android:name=".register.RegisterActivity" />
+        <activity android:name=".register.RegisterActivity" android:label="注册" />
     </application>
 
 </manifest>

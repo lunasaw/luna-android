@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 
 import com.luna.application.R;
-import com.luna.application.entity.ImageItem;
+import com.luna.application.entity.ImageItemDO;
 import com.luna.application.utils.DateUtil;
 
 import java.util.List;
@@ -23,9 +23,9 @@ public class ListViewAdapter extends BaseAdapter {
     private Context            mContext;
     private LayoutInflater     mLayoutInflater;
     private int                size;
-    private List<ImageItem>    list;
+    private List<ImageItemDO>    list;
 
-    public ListViewAdapter(Context context, List<ImageItem> list) {
+    public ListViewAdapter(Context context, List<ImageItemDO> list) {
         this.mContext = context;
         this.size = list.size();
         this.list = list;
@@ -56,7 +56,7 @@ public class ListViewAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = null;
-        ImageItem imageItem = list.get(i);
+        ImageItemDO imageItemDO = list.get(i);
 
         if (view == null) {
             view = mLayoutInflater.inflate(R.layout.list_item_layout, null);
@@ -69,10 +69,10 @@ public class ListViewAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder)view.getTag();
         }
-        holder.tvTitle.setText(imageItem.getTitle());
-        holder.tvTime.setText(DateUtil.dateToString(imageItem.getDate(), DateUtil.DatePattern.ONLY_DAY));
-        holder.tvContent.setText(imageItem.getContent());
-        holder.imageView.setImageResource(imageItem.getDrawable());
+        holder.tvTitle.setText(imageItemDO.getTitle());
+        holder.tvTime.setText(DateUtil.dateToString(imageItemDO.getDate(), DateUtil.DatePattern.ONLY_DAY));
+        holder.tvContent.setText(imageItemDO.getContent());
+        holder.imageView.setImageResource(imageItemDO.getDrawable());
         return view;
     }
 }

@@ -17,8 +17,11 @@ import androidx.annotation.Nullable;
 
 import com.alibaba.fastjson.JSON;
 import com.luna.application.R;
+import com.luna.application.dao.UserDAO;
 import com.luna.application.entity.UserDO;
+import com.luna.application.utils.HashUtils;
 import com.luna.application.utils.ShareUtils;
+import com.luna.application.utils.ToastUtil;
 
 public class LoginActivity extends Activity {
 
@@ -32,6 +35,8 @@ public class LoginActivity extends Activity {
 
     private CheckBox   remember;
 
+    private UserDAO    userDAO;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +47,9 @@ public class LoginActivity extends Activity {
         ShareUtils instance = ShareUtils.getInstance(this);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
+        userDAO = new UserDAO(this);
         final UserDO userDO =
-            new UserDO(ShareUtils.getKey("username"), ShareUtils.getKey("password"), ShareUtils.getKey("gender"));
+            new UserDO(instance.getKey("username"), instance.getKey("password"), instance.getKey("gender"));
         username.setText(userDO.getUserName());
         password.setText(userDO.getPassword());
         setSex(userDO.getGender());
@@ -57,21 +63,23 @@ public class LoginActivity extends Activity {
                     return;
                 } else {
                     Intent intent = new Intent(LoginActivity.this, InfoActivity.class);
-                    UserDO user = new UserDO(name, word, getSex());
-                    intent.putExtra("userInfo", user);
-                    if (remember.isChecked()) {
-                        ShareUtils.putString("username", name);
-                        ShareUtils.putString("password", word);
-                        ShareUtils.putString("gender", getSex());
-                        ShareUtils.putBoolean("remember", true);
-                        ShareUtils.putString("userInfo", JSON.toJSONString(user));
-                        Log.i("login", "onCreate: " + JSON.toJSONString(user));
+                    UserDO user = new UserDO(name, HashUtils.SHA512(word), getSex());
+                    UserDO query = userDAO.query(user);
+                    if (query != null) {
+                        intent.putExtra("userInfo", query);
+                        if (remember.isChecked()) {
+                            ShareUtils.putString("userInfo", JSON.toJSONString(query));
+                            Log.i("login", "onCreate: " + JSON.toJSONString(query));
+                        } else {
+                            ShareUtils.putString("username", "");
+                            ShareUtils.putString("password", "");
+                            instance.putBoolean("remember", false);
+                        }
+                        startActivity(intent);
+                        ToastUtil.showMsg(LoginActivity.this, "登陆成功");
                     } else {
-                        ShareUtils.putString("username", "");
-                        ShareUtils.putString("password", "");
-                        ShareUtils.putBoolean("remember", false);
+                        ToastUtil.showMsg(LoginActivity.this, "用户不存在");
                     }
-                    startActivity(intent);
                 }
             }
         });

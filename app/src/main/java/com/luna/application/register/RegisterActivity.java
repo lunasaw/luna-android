@@ -2,27 +2,20 @@ package com.luna.application.register;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.common.hash.Hashing;
-import com.luna.application.MainActivity;
 import com.luna.application.R;
-import com.luna.application.database.dao.UserDAO;
+import com.luna.application.dao.UserDAO;
 import com.luna.application.entity.UserDO;
 import com.luna.application.login.LoginActivity;
 import com.luna.application.utils.HashUtils;
 import com.luna.application.utils.ToastUtil;
-
-import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -98,6 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void remove() {
         String username = this.username.getText().toString();
         String ensure = this.ensurePassword.getText().toString();
+        String password = this.password.getText().toString();
         if (userDAO.query(username).size() == 0) {
             ToastUtil.showMsg(this, "用户不存在");
             return;
@@ -105,6 +99,8 @@ public class RegisterActivity extends AppCompatActivity {
         if (password.equals(ensure)) {
             boolean delete = userDAO.delete(username);
             ToastUtil.showMsg(this, delete ? "删除成功" : "删除失败");
+        } else {
+            ToastUtil.showMsg(this, "密码不匹配");
         }
     }
 

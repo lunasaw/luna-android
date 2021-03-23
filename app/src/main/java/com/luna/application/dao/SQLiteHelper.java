@@ -1,13 +1,14 @@
-package com.luna.application.database.dao;
+package com.luna.application.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
+
+    public static final String DB = "luna-sqlite";
 
     /**
      * 构造器
@@ -23,7 +24,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     public SQLiteHelper(@Nullable Context context) {
-        super(context, "luna-sqlite", null, 1);
+        super(context, DB, null, 1);
     }
 
     /**
@@ -34,7 +35,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(
-            "create table tb_user("
+            "create table if not exists tb_user("
                 + "id integer primary key autoincrement,"
                 + "username text,"
                 + "password text,"

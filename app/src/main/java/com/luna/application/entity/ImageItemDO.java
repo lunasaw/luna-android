@@ -2,7 +2,7 @@ package com.luna.application.entity;
 
 import java.util.Date;
 
-public class ImageItem {
+public class ImageItemDO {
 
     private String id;
 
@@ -24,7 +24,7 @@ public class ImageItem {
         this.drawable = drawable;
     }
 
-    public ImageItem(String id, String content, int drawable, Date date, String title) {
+    public ImageItemDO(String id, String content, int drawable, Date date, String title) {
         this.id = id;
         Content = content;
         this.drawable = drawable;

@@ -8,7 +8,7 @@
     <ImageView
             android:id="@+id/or_img"
             android:layout_width="match_parent"
-            android:src="@drawable/qq_dizhu"
+            android:src="@drawable/qq_di_zhu"
             android:scaleType="fitXY"
             android:layout_height="280dp"/>
 

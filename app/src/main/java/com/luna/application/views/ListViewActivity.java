@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.common.collect.Lists;
 import com.luna.application.R;
-import com.luna.application.entity.ImageItem;
+import com.luna.application.entity.ImageItemDO;
 import com.luna.application.utils.DateUtil;
 import com.luna.application.utils.ToastUtil;
 
@@ -25,7 +25,7 @@ public class ListViewActivity extends AppCompatActivity {
     public static final int INT = 20;
     private ListView        listView;
 
-    private List<ImageItem> imageItems;
+    private List<ImageItemDO> imageItemDOS;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -34,8 +34,8 @@ public class ListViewActivity extends AppCompatActivity {
         setContentView(R.layout.list_view_layout);
 
         listView = findViewById(R.id.lv_1);
-        imageItems = imageItemList();
-        listView.setAdapter(new ListViewAdapter(ListViewActivity.this, imageItems));
+        imageItemDOS = imageItemList();
+        listView.setAdapter(new ListViewAdapter(ListViewActivity.this, imageItemDOS));
 
         // 点击事件
         listView.setOnItemClickListener(new Onclick());
@@ -49,8 +49,8 @@ public class ListViewActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             AlertDialog.Builder builder = new AlertDialog.Builder(ListViewActivity.this);
-            builder.setTitle("请回答：").setMessage("你喜欢" + imageItems.get(i).getTitle() + "吗？")
-                .setIcon(imageItems.get(i).getDrawable())
+            builder.setTitle("请回答：").setMessage("你喜欢" + imageItemDOS.get(i).getTitle() + "吗？")
+                .setIcon(imageItemDOS.get(i).getDrawable())
                 .setPositiveButton("喜欢", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -81,21 +81,21 @@ public class ListViewActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public static List<ImageItem> imageItemList() {
-        ArrayList<ImageItem> list = Lists.newArrayList();
-        list.add(new ImageItem("qq", "QQ", R.drawable.qq,
+    public static List<ImageItemDO> imageItemList() {
+        ArrayList<ImageItemDO> list = Lists.newArrayList();
+        list.add(new ImageItemDO("qq", "QQ", R.drawable.qq,
             DateUtil.getNowDate(DateUtil.DatePattern.ONLY_DAY), "QQ"));
-        list.add(new ImageItem("jd", "京东购物", R.drawable.jd,
+        list.add(new ImageItemDO("jd", "京东购物", R.drawable.jd,
             DateUtil.getNowDate(DateUtil.DatePattern.ONLY_DAY), "京东"));
-        list.add(new ImageItem("qq_dizhu", "欢乐斗地主", R.drawable.qq_dizhu,
+        list.add(new ImageItemDO("qq_dizhu", "欢乐斗地主", R.drawable.qq_di_zhu,
             DateUtil.getNowDate(DateUtil.DatePattern.ONLY_DAY), "欢乐斗地主"));
-        list.add(new ImageItem("sina", "新浪微博", R.drawable.sina,
+        list.add(new ImageItemDO("sina", "新浪微博", R.drawable.sina,
             DateUtil.getNowDate(DateUtil.DatePattern.ONLY_DAY), "sina"));
-        list.add(new ImageItem("tmall", "天猫购物", R.drawable.tmall,
+        list.add(new ImageItemDO("tmall", "天猫购物", R.drawable.tmall,
             DateUtil.getNowDate(DateUtil.DatePattern.ONLY_DAY), "天猫购物"));
-        list.add(new ImageItem("uc", "UC浏览器", R.drawable.uc,
+        list.add(new ImageItemDO("uc", "UC浏览器", R.drawable.uc,
             DateUtil.getNowDate(DateUtil.DatePattern.ONLY_DAY), "UC浏览器"));
-        list.add(new ImageItem("weixin", "微信 连接你我", R.drawable.weixin,
+        list.add(new ImageItemDO("weixin", "微信 连接你我", R.drawable.weixin,
             DateUtil.getNowDate(DateUtil.DatePattern.ONLY_DAY), "微信"));
         return list;
     }
