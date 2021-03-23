@@ -49,7 +49,6 @@ public class GoodsDAO {
                 DateUtil.stringToDate(cursor.getString(2), DateUtil.DatePattern.ONLY_DAY), cursor.getString(3),
                 cursor.getInt(4)));
         }
-        Log.i("query", "query: " + goods.get(0));
         return goods.size() != 0 ? goods.get(0) : null;
     }
 

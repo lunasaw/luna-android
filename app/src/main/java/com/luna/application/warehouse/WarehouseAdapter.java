@@ -69,9 +69,9 @@ public class WarehouseAdapter extends BaseAdapter {
             holder = (ViewHolder)view.getTag();
         }
         holder.title.setText("商品名称：" + goodsDO.getTitle());
-        holder.content.setText("商品介绍" + goodsDO.getContent());
-        holder.date.setText("上架时间" + DateUtil.dateToString(goodsDO.getDate(), DateUtil.DatePattern.ONLY_DAY));
-        holder.price.setText("商品价格" + goodsDO.getPrice());
+        holder.content.setText("商品介绍：" + goodsDO.getContent());
+        holder.date.setText("上架时间：" + DateUtil.dateToString(goodsDO.getDate(), DateUtil.DatePattern.ONLY_DAY));
+        holder.price.setText("商品价格：" + goodsDO.getPrice());
         return view;
     }
 }

@@ -18,10 +18,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.luna.application.R;
 import com.luna.application.dao.GoodsDAO;
 import com.luna.application.entity.GoodsDO;
+import com.luna.application.utils.DateUtil;
 import com.luna.application.utils.ToastUtil;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+@RequiresApi(api = Build.VERSION_CODES.N)
 public class WarehouseActivity extends AppCompatActivity {
 
     private ListView      listView;
@@ -44,7 +48,7 @@ public class WarehouseActivity extends AppCompatActivity {
         operation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WarehouseActivity.this, GoodsOperationActivity.class);
+                Intent intent = new Intent(WarehouseActivity.this, OperationActivity.class);
                 startActivity(intent);
             }
         });
@@ -92,9 +96,27 @@ public class WarehouseActivity extends AppCompatActivity {
         }
     }
 
+    private static List<GoodsDO> list =new ArrayList<>();
+    static {
+        GoodsDO goodsDO = new GoodsDO("香蕉", "美味好吃香甜可口美味好吃香甜可口", DateUtil.stringToDate("2021-3-23", DateUtil.DatePattern.ONLY_DAY), 10);
+        GoodsDO goodsDO1 = new GoodsDO("橘子", "美味好吃", DateUtil.stringToDate("2021-3-23", DateUtil.DatePattern.ONLY_DAY), 10);
+        GoodsDO goodsDO2 = new GoodsDO("苹果", "美味好吃", DateUtil.stringToDate("2021-3-23", DateUtil.DatePattern.ONLY_DAY), 10);
+        GoodsDO goodsDO3 = new GoodsDO("手机", "1999交个朋友1999交个朋友1999交个朋友1999交个朋友", DateUtil.stringToDate("2021-3-23", DateUtil.DatePattern.ONLY_DAY), 1999);
+        GoodsDO goodsDO4 = new GoodsDO("方便面", "美味时刻享受", DateUtil.stringToDate("2021-3-23", DateUtil.DatePattern.ONLY_DAY), 11);
+        list.add(goodsDO);
+        list.add(goodsDO1);
+        list.add(goodsDO2);
+        list.add(goodsDO3);
+        list.add(goodsDO4);
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     public List<GoodsDO> itemList() {
         goodsDAO = new GoodsDAO(this);
+        for (GoodsDO goodsDO : list) {
+            goodsDAO.insert(goodsDO);
+        }
+        list.removeAll(list);
         return goodsDAO.query();
     }
 }

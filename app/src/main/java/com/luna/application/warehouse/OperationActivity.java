@@ -15,8 +15,9 @@ import com.luna.application.R;
 import com.luna.application.dao.GoodsDAO;
 import com.luna.application.entity.GoodsDO;
 import com.luna.application.utils.DateUtil;
+import com.luna.application.utils.ToastUtil;
 
-public class GoodsOperationActivity extends AppCompatActivity {
+public class OperationActivity extends AppCompatActivity {
 
     private EditText title, content, date, price, goodsEdit;
 
@@ -64,21 +65,36 @@ public class GoodsOperationActivity extends AppCompatActivity {
         String content = this.content.getText().toString();
         String date = this.date.getText().toString();
         String price = this.price.getText().toString();
+        if (goodsDAO.query(title) == null) {
+            ToastUtil.showMsg(this, "商品不存在");
+            return;
+        }
         GoodsDO goodsDO = new GoodsDO(title, content, DateUtil.stringToDate(date, DateUtil.DatePattern.ONLY_DAY),
-                Integer.parseInt(price));
+            Integer.parseInt(price));
         Log.i("TAG", "update: " + goodsDO);
-        goodsDAO.update(goodsDO);
+        boolean update = goodsDAO.update(goodsDO);
+        ToastUtil.showMsg(this, update ? "修改成功" : "修改失败");
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void remove() {
         String title = this.goodsEdit.getText().toString();
-        goodsDAO.delete(title);
+        if (goodsDAO.query(title) == null) {
+            ToastUtil.showMsg(this, "商品不存在");
+            return;
+        }
+        boolean delete = goodsDAO.delete(title);
+        ToastUtil.showMsg(this, delete ? "删除成功" : "删除失败");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void query() {
         String title = this.goodsEdit.getText().toString();
         GoodsDO query = goodsDAO.query(title);
+        if (query == null) {
+            ToastUtil.showMsg(this, "商品不存在");
+            return;
+        }
         this.title.setText(query.getTitle());
         this.content.setText(query.getContent());
         this.date.setText(DateUtil.dateToString(query.getDate(), DateUtil.DatePattern.ONLY_DAY));
@@ -92,6 +108,10 @@ public class GoodsOperationActivity extends AppCompatActivity {
         String content = this.content.getText().toString();
         String date = this.date.getText().toString();
         String price = this.price.getText().toString();
+        if (goodsDAO.query(title) != null) {
+            ToastUtil.showMsg(this, "商品已存在");
+            return;
+        }
         GoodsDO goodsDO = new GoodsDO(title, content, DateUtil.stringToDate(date, DateUtil.DatePattern.ONLY_DAY),
             Integer.parseInt(price));
         Log.i("TAG", "insert: " + goodsDO);
