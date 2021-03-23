@@ -13,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.luna.application.R;
 import com.luna.application.api.ApiKey;
 import com.luna.application.utils.HttpUtil;
-import com.luna.application.utils.HttpUtils;
-
 public class OrCreateActivity extends AppCompatActivity {
 
     private ImageView imageView;

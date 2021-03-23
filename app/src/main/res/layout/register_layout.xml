@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGreen"
+        android:padding="15dp">
+
+    <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/bg_username"
+            android:drawableLeft="@drawable/username"
+            android:drawablePadding="5dp"
+            android:hint="用户名"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+    <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/username"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_username"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="5dp"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+    <EditText
+            android:id="@+id/ensure_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/password"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_username"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="5dp"
+            android:hint="确认密码"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+
+    <RadioGroup
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ensure_password"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+        <RadioButton
+                android:id="@+id/gender_man"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="男"
+                android:textColor="#FF6600"
+                android:textSize="18sp" />
+
+        <RadioButton
+                android:id="@+id/gender_wowan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女"
+                android:textColor="#FF6600"
+                android:textSize="18sp" />
+    </RadioGroup>
+
+    <Button
+            android:id="@+id/btn_register"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/gender"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bg_btn4"
+            android:text="注册"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+    <Button
+            android:id="@+id/update_info"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/btn_register"
+            android:layout_below="@id/gender"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bg_btn4"
+            android:text="修改"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+    <Button
+            android:id="@+id/remove_info"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/update_info"
+            android:layout_below="@id/gender"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bg_btn4"
+            android:text="删除"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+</RelativeLayout>

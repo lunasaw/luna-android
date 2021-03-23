@@ -10,109 +10,129 @@
             android:padding="10dp">
 
         <Button
-                android:id="@+id/didi"
+                android:id="@+id/database"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/grassgreen"
-                android:text="didiLayout"
-                android:textSize="18dp" />
-        <Button
-                android:id="@+id/calculate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/grassgreen"
-                android:layout_marginTop="10dp"
-                android:text="calculateLayout"
+                android:text="数据库"
                 android:textSize="18dp" />
 
         <Button
                 android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/grassgreen"
+                android:text="登陆演示"
+                android:textSize="18dp" />
+
+        <Button
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/grassgreen"
                 android:layout_marginTop="10dp"
-                android:text="loginLayout"
+                android:text="注册演示"
                 android:textSize="18dp" />
+
+        <Button
+                android:id="@+id/didi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grassgreen"
+                android:layout_marginTop="10dp"
+                android:text="滴滴登陆"
+                android:textSize="18dp" />
+
+        <Button
+                android:id="@+id/calculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/grassgreen"
+                android:text="计算器"
+                android:textSize="18dp" />
+
 
         <Button
                 android:id="@+id/hero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/grassgreen"
                 android:layout_marginTop="10dp"
-                android:text="heroLayout"
+                android:background="@color/grassgreen"
+                android:text="英雄游戏"
                 android:textSize="18dp" />
 
         <Button
                 android:id="@+id/log"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/grassgreen"
                 android:layout_marginTop="10dp"
-                android:text="logLayout"
+                android:background="@color/grassgreen"
+                android:text="日志演示"
                 android:textSize="18dp" />
 
         <Button
                 android:id="@+id/dialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/grassgreen"
                 android:layout_marginTop="10dp"
-                android:text="dialogLayout"
+                android:background="@color/grassgreen"
+                android:text="对话框演示"
                 android:textSize="18dp" />
 
         <Button
                 android:id="@+id/file"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/grassgreen"
                 android:layout_marginTop="10dp"
-                android:text="FilegLayout"
+                android:background="@color/grassgreen"
+                android:text="文件操作"
                 android:textSize="18dp" />
 
         <Button
                 android:id="@+id/listView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/grassgreen"
                 android:layout_marginTop="10dp"
-                android:text="listViewLayout"
+                android:background="@color/grassgreen"
+                android:text="列表展示"
                 android:textSize="18dp" />
 
         <Button
                 android:id="@+id/listViewExam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/grassgreen"
                 android:layout_marginTop="10dp"
-                android:text="Examalayout"
+                android:background="@color/grassgreen"
+                android:text="考试示例"
                 android:textSize="18dp" />
 
         <Button
                 android:id="@+id/birth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/grassgreen"
                 android:layout_marginTop="10dp"
-                android:text="birthlayout"
+                android:background="@color/grassgreen"
+                android:text="生辰八字"
                 android:textSize="18dp" />
 
         <Button
                 android:id="@+id/orCreate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/grassgreen"
                 android:layout_marginTop="10dp"
-                android:text="orCreatelayout"
+                android:background="@color/grassgreen"
+                android:text="创建二维码"
                 android:textSize="18dp" />
 
         <Button
                 android:id="@+id/searchPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/grassgreen"
                 android:layout_marginTop="10dp"
-                android:text="searchPhonelayout"
+                android:background="@color/grassgreen"
+                android:text="查找手机归属地区"
                 android:textSize="18dp" />
     </LinearLayout>
 

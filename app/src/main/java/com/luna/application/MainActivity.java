@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.luna.application.calculate.CalculateActivity;
+import com.luna.application.database.DataBaseActivity;
 import com.luna.application.didi.DiDiActivity;
 import com.luna.application.dailog.DialogActivity;
 import com.luna.application.file.FileActivity;
@@ -16,6 +17,7 @@ import com.luna.application.listView.exam.ExamActivity;
 import com.luna.application.listView.ListViewActivity;
 import com.luna.application.login.LoginActivity;
 import com.luna.application.orcreate.OrCreateActivity;
+import com.luna.application.register.RegisterActivity;
 import com.luna.application.searchphone.SearchPhoneActivity;
 import com.luna.application.bitrh.BirthHoroscope;
 
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button logButton;
 
+    private Button registerButton;
+
     private Button dialogButton;
 
     private Button fileButton;
@@ -44,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     private Button orCreateButton;
 
     private Button searchPhoneButton;
+
+    private Button dataBaseButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +66,10 @@ public class MainActivity extends AppCompatActivity {
         listViewButton = findViewById(R.id.listView);
         listViewExamButton = findViewById(R.id.listViewExam);
         birthButton = findViewById(R.id.birth);
-        orCreateButton  = findViewById(R.id.orCreate);
+        orCreateButton = findViewById(R.id.orCreate);
         searchPhoneButton = findViewById(R.id.searchPhone);
+        dataBaseButton = findViewById(R.id.database);
+        registerButton = findViewById(R.id.register);
         setListeners();
     }
 
@@ -83,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
         birthButton.setOnClickListener(onClick);
         orCreateButton.setOnClickListener(onClick);
         searchPhoneButton.setOnClickListener(onClick);
+        dataBaseButton.setOnClickListener(onClick);
+        registerButton.setOnClickListener(onClick);
     }
 
     /**
@@ -134,13 +144,19 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.birth:
                     intent = new Intent(MainActivity.this, BirthHoroscope.class);
                     break;
-                // 跳转到listViewExamLayout演示页面
+                // 跳转到orCreate演示页面
                 case R.id.orCreate:
                     intent = new Intent(MainActivity.this, OrCreateActivity.class);
                     break;
-                // 跳转到listViewExamLayout演示页面
+                // 跳转到searchPhone演示页面
                 case R.id.searchPhone:
                     intent = new Intent(MainActivity.this, SearchPhoneActivity.class);
+                    break;
+                case R.id.database:
+                    intent = new Intent(MainActivity.this, DataBaseActivity.class);
+                    break;
+                case R.id.register:
+                    intent = new Intent(MainActivity.this, RegisterActivity.class);
                     break;
             }
             startActivity(intent);

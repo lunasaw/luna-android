@@ -14,7 +14,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.luna.application.R;
 import com.luna.application.api.ApiKey;
 import com.luna.application.utils.HttpUtil;
-import com.luna.application.utils.HttpUtils;
 import com.luna.application.utils.ToastUtil;
 
 public class SearchPhoneActivity extends AppCompatActivity {
