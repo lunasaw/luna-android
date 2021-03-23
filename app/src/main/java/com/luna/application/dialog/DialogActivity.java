@@ -1,4 +1,4 @@
-package com.luna.application.dailog;
+package com.luna.application.dialog;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;

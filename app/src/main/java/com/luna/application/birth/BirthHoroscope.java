@@ -1,4 +1,4 @@
-package com.luna.application.bitrh;
+package com.luna.application.birth;
 
 import android.os.Bundle;
 import android.util.Log;

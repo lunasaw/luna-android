@@ -27,13 +27,13 @@
         <activity android:name=".hero.MainWeaponActivity" />
         <activity android:name=".hero.DeputyWeapon" />
         <activity android:name=".LogActivity" />
-        <activity android:name=".dailog.DialogActivity" />
+        <activity android:name=".dialog.DialogActivity" />
         <activity android:name=".file.FileActivity" />
-        <activity android:name=".listView.ListViewActivity" />
-        <activity android:name=".listView.exam.ExamActivity" />
-        <activity android:name=".bitrh.BirthHoroscope" />
-        <activity android:name=".orcreate.OrCreateActivity" />
-        <activity android:name=".searchphone.SearchPhoneActivity" />
+        <activity android:name=".views.ListViewActivity" />
+        <activity android:name=".views.exam.ExamActivity" />
+        <activity android:name=".birth.BirthHoroscope" />
+        <activity android:name=".qrcodecreate.OrCreateActivity" />
+        <activity android:name=".smartphone.SearchPhoneActivity" />
         <activity android:name=".database.DataBaseActivity" />
         <activity android:name=".register.RegisterActivity" />
     </application>

@@ -1,4 +1,4 @@
-package com.luna.application.searchphone;
+package com.luna.application.smartphone;
 
 import android.os.Bundle;
 import android.util.Log;

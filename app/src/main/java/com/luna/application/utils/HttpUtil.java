@@ -70,6 +70,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HttpUtil {
+
+    public static final String HTTP = "HttpUtil";
+
     /**
      * Send a get request
      * 
@@ -419,12 +422,13 @@ public class HttpUtil {
                 }
             });
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            ToastUtil.showMsg(activity, "请检查你的网络连接");
         }
     }
 
     /**
      * post 自带header+请求题
+     * 
      * @param activity
      * @param url
      * @param body
@@ -459,7 +463,7 @@ public class HttpUtil {
                         }
                     });
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    ToastUtil.showMsg(activity, "请检查你的网络连接");
                 }
             }
         }).start();
@@ -515,6 +519,7 @@ public class HttpUtil {
      */
     public static void get(final Activity activity, final String url,
         final OnHttpResponseListener onHttpResponseListener) {
+        Log.i(HTTP, "get: " + url);
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -536,7 +541,7 @@ public class HttpUtil {
                 }
             });
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            ToastUtil.showMsg(activity, "请检查你的网络连接");
         }
 
     }

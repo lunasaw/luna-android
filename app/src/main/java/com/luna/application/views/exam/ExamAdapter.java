@@ -1,4 +1,4 @@
-package com.luna.application.listView.exam;
+package com.luna.application.views.exam;
 
 import android.content.Context;
 import android.view.LayoutInflater;

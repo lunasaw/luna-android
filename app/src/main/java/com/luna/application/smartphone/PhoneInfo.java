@@ -1,4 +1,4 @@
-package com.luna.application.searchphone;
+package com.luna.application.smartphone;
 
 public class PhoneInfo {
 
