@@ -19,6 +19,7 @@ import com.luna.application.picture.OrCreateActivity;
 import com.luna.application.register.RegisterActivity;
 import com.luna.application.smartphone.SearchPhoneActivity;
 import com.luna.application.birth.BirthHoroscope;
+import com.luna.application.warehouse.WarehouseActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button searchPhoneButton;
 
+    private Button warehouseButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         orCreateButton = findViewById(R.id.orCreate);
         searchPhoneButton = findViewById(R.id.searchPhone);
         registerButton = findViewById(R.id.register);
+        warehouseButton  = findViewById(R.id.warehouse);
         setListeners();
     }
 
@@ -88,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         orCreateButton.setOnClickListener(onClick);
         searchPhoneButton.setOnClickListener(onClick);
         registerButton.setOnClickListener(onClick);
+        warehouseButton.setOnClickListener(onClick);
     }
 
     /**
@@ -149,6 +154,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.register:
                     intent = new Intent(MainActivity.this, RegisterActivity.class);
+                    break;
+                case R.id.warehouse:
+                    intent = new Intent(MainActivity.this, WarehouseActivity.class);
                     break;
             }
             startActivity(intent);

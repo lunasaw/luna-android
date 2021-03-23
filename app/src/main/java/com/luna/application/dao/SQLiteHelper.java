@@ -40,6 +40,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + "username text,"
                 + "password text,"
                 + "gender text)");
+        sqLiteDatabase.execSQL(
+            "create table if not exists tb_goods("
+                + "id integer primary key autoincrement,"
+                + "content text,"
+                + "title text,"
+                + "price text,"
+                + "date text)");
     }
 
     /**

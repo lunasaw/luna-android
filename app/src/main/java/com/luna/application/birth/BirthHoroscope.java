@@ -30,7 +30,7 @@ public class BirthHoroscope extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.weather_layout);
+        setContentView(R.layout.birth_layout);
 
         etYear = findViewById(R.id.et_year);
         etMonth = findViewById(R.id.et_month);

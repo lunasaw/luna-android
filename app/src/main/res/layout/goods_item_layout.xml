@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+        <TextView
+                android:id="@+id/goods_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="商品标题"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+        <TextView
+                android:id="@+id/goods_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="添加日期"
+                android:textColor="@color/colorGrayDark"
+                android:textSize="18sp" />
+
+        <TextView
+                android:id="@+id/goods_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="商品介绍"
+                android:gravity="center_horizontal"
+                android:textColor="@color/colorGrayDark"
+                android:textSize="18sp" />
+
+        <TextView
+                android:id="@+id/goods_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="商品价格"
+                android:gravity="center_horizontal"
+                android:textColor="@color/colorGrayDark"
+                android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

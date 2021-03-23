@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+    <Button
+            android:id="@+id/operation_goods"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_btn4"
+            android:text="商品操作"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
+
+    <ListView
+            android:layout_marginTop="10dp"
+            android:id="@+id/goods"
+            android:divider="@color/red"
+            android:dividerHeight="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:listSelector="@drawable/list_item"></ListView>
+
+
+</LinearLayout>

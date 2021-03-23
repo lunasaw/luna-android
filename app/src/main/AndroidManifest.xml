@@ -35,6 +35,8 @@
         <activity android:name=".picture.OrCreateActivity" />
         <activity android:name=".smartphone.SearchPhoneActivity" />
         <activity android:name=".register.RegisterActivity" android:label="注册" />
+        <activity android:name=".warehouse.WarehouseActivity" android:label="仓库管理" />
+        <activity android:name=".warehouse.GoodsOperationActivity" android:label="仓库管理" />
     </application>
 
 </manifest>

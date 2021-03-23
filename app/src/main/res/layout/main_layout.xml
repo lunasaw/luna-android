@@ -10,11 +10,11 @@
             android:padding="10dp">
 
         <Button
-                android:id="@+id/database"
+                android:id="@+id/warehouse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/grassgreen"
-                android:text="数据库"
+                android:text="仓库管理"
                 android:textSize="18dp" />
 
         <Button
