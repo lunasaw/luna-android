@@ -18,15 +18,12 @@ public class DeputyWeapon extends Activity {
         setContentView(R.layout.deputyweapon_layout);
 
         iron = findViewById(R.id.iron);
-        iron.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.putExtra("info", new ItemInfo(50, 10, 20));
-                setResult(0, intent);
-                finish();
-            }
-        });
 
+        iron.setOnClickListener(view -> {
+            Intent intent = new Intent();
+            intent.putExtra("info", new ItemInfo(50, 10, 20));
+            setResult(0, intent);
+            finish();
+        });
     }
 }

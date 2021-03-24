@@ -25,6 +25,7 @@ public class FragmentThree extends Fragment {
         void onclick(String string);
     }
 
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

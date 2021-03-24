@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSON;
 import com.luna.application.R;
 import com.luna.application.dao.UserDAO;
 import com.luna.application.entity.UserDO;
+import com.luna.application.register.RegisterActivity;
 import com.luna.application.utils.HashUtils;
 import com.luna.application.utils.ShareUtils;
 import com.luna.application.utils.ToastUtil;
@@ -53,33 +54,33 @@ public class LoginActivity extends Activity {
         username.setText(userDO.getUserName());
         password.setText(userDO.getPassword());
         setSex(userDO.getGender());
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String name = username.getText().toString();
-                String word = password.getText().toString();
-                if (TextUtils.isEmpty(name) || TextUtils.isEmpty(word)) {
-                    Toast.makeText(LoginActivity.this, "用户名或者密码不能为空", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    Intent intent = new Intent(LoginActivity.this, InfoActivity.class);
-                    UserDO user = new UserDO(name, HashUtils.SHA512(word), getSex());
-                    UserDO query = userDAO.query(user);
-                    if (query != null) {
-                        intent.putExtra("userInfo", query);
-                        if (remember.isChecked()) {
-                            ShareUtils.putString("userInfo", JSON.toJSONString(query));
-                            Log.i("login", "onCreate: " + JSON.toJSONString(query));
-                        } else {
-                            ShareUtils.putString("username", "");
-                            ShareUtils.putString("password", "");
-                            instance.putBoolean("remember", false);
-                        }
-                        startActivity(intent);
-                        ToastUtil.showMsg(LoginActivity.this, "登陆成功");
+
+        login.setOnClickListener(view -> {
+            String name = username.getText().toString();
+            String word = password.getText().toString();
+            if (TextUtils.isEmpty(name) || TextUtils.isEmpty(word)) {
+                Toast.makeText(LoginActivity.this, "用户名或者密码不能为空", Toast.LENGTH_SHORT).show();
+                return;
+            } else {
+                Intent intent = new Intent(LoginActivity.this, InfoActivity.class);
+                UserDO user = new UserDO(name, HashUtils.SHA512(word), getSex());
+                UserDO query = userDAO.query(user);
+                if (query != null) {
+                    intent.putExtra("userInfo", query);
+                    if (remember.isChecked()) {
+                        ShareUtils.putString("userInfo", JSON.toJSONString(query));
+                        Log.i("login", "onCreate: " + JSON.toJSONString(query));
                     } else {
-                        ToastUtil.showMsg(LoginActivity.this, "用户不存在");
+                        ShareUtils.putString("username", "");
+                        ShareUtils.putString("password", "");
+                        instance.putBoolean("remember", false);
                     }
+                    startActivity(intent);
+                    ToastUtil.showMsg(LoginActivity.this, "登陆成功");
+                } else {
+                    ToastUtil.showMsg(LoginActivity.this, "用户不存在");
+                    intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                    startActivity(intent);
                 }
             }
         });

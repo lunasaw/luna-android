@@ -42,16 +42,13 @@ public class BirthHoroscope extends AppCompatActivity {
         tvStar = findViewById(R.id.tv_star);
         tvAnimal = findViewById(R.id.tv_animal);
 
-        btnCommit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String year = etYear.getText().toString();
-                String month = etMonth.getText().toString();
-                String day = etDay.getText().toString();
-                String hour = etHour.getText().toString();
-                String endUrl = getUrl(year, month, day, hour);
-                getEnd(endUrl);
-            }
+        btnCommit.setOnClickListener(view -> {
+            String year = etYear.getText().toString();
+            String month = etMonth.getText().toString();
+            String day = etDay.getText().toString();
+            String hour = etHour.getText().toString();
+            String endUrl = getUrl(year, month, day, hour);
+            getEnd(endUrl);
         });
     }
 

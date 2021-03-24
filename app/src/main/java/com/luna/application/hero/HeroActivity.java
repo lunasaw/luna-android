@@ -50,23 +50,17 @@ public class HeroActivity extends Activity {
         init();
 
         mainWeapon = findViewById(R.id.main_weapon);
-        mainWeapon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HeroActivity.this, MainWeaponActivity.class);
-                startActivityForResult(intent, 0);
-            }
+        mainWeapon.setOnClickListener(view -> {
+            Intent intent = new Intent(HeroActivity.this, MainWeaponActivity.class);
+            startActivityForResult(intent, 0);
         });
 
         deputyWeapon = findViewById(R.id.deputy_weapon);
-        deputyWeapon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HeroActivity.this, DeputyWeapon.class);
-                startActivityForResult(intent, 0);
-            }
-        });
 
+        deputyWeapon.setOnClickListener(view -> {
+            Intent intent = new Intent(HeroActivity.this, DeputyWeapon.class);
+            startActivityForResult(intent, 0);
+        });
     }
 
     private void init() {

@@ -39,22 +39,22 @@ public class SearchPhoneActivity extends AppCompatActivity {
         textView3 = findViewById(R.id.tv_zip);
         textView4 = findViewById(R.id.tv_company);
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String phone = etPhone.getText().toString();
-                get(getUrl(phone));
-            }
+        btnSubmit.setOnClickListener(view -> {
+            String phone = etPhone.getText().toString();
+            get(getUrl(phone));
         });
-
     }
 
     private void get(String url) {
+        HttpUtil.get(this, url, json -> {
+            getParse(json);
+            Log.i("TAG", "onGetString: " + json);
+        });
+
         HttpUtil.get(this, url, new HttpUtil.OnHttpResponseListener() {
             @Override
             public void onGetString(String json) {
-                getParse(json);
-                Log.i("TAG", "onGetString: " + json);
+
             }
         });
     }
