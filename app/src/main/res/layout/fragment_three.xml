@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+    <Button
+            android:id="@+id/fragment_three_btn_change"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_btn4"
+            android:text="内部Three更换fragment" />
+
+
+    <Button
+            android:id="@+id/fragment_three_btn_reset"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_btn4"
+            android:text="给Activity发送消息" />
+
+    <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/fragment_three"
+            android:layout_width="match_parent"
+            android:background="@color/colorAccent"
+            android:text="我是fragmentThree"
+            android:gravity="center"
+            android:layout_height="50dp" />
+</LinearLayout>

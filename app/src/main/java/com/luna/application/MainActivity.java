@@ -11,6 +11,7 @@ import com.luna.application.calculate.CalculateActivity;
 import com.luna.application.didi.DiDiActivity;
 import com.luna.application.dialog.DialogActivity;
 import com.luna.application.file.FileActivity;
+import com.luna.application.fragment.FragmentActivity;
 import com.luna.application.hero.HeroActivity;
 import com.luna.application.views.exam.ExamActivity;
 import com.luna.application.views.ListViewActivity;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button warehouseButton;
 
+    private Button fragmentButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         searchPhoneButton = findViewById(R.id.searchPhone);
         registerButton = findViewById(R.id.register);
         warehouseButton  = findViewById(R.id.warehouse);
+        fragmentButton = findViewById(R.id.fragment);
         setListeners();
     }
 
@@ -93,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         searchPhoneButton.setOnClickListener(onClick);
         registerButton.setOnClickListener(onClick);
         warehouseButton.setOnClickListener(onClick);
+        fragmentButton.setOnClickListener(onClick);
     }
 
     /**
@@ -157,6 +162,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.warehouse:
                     intent = new Intent(MainActivity.this, WarehouseActivity.class);
+                    break;
+                case R.id.fragment:
+                    intent = new Intent(MainActivity.this, FragmentActivity.class);
                     break;
             }
             startActivity(intent);

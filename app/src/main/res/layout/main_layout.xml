@@ -10,10 +10,19 @@
             android:padding="10dp">
 
         <Button
+                android:id="@+id/fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grassgreen"
+                android:text="动态组件"
+                android:textSize="18dp" />
+
+        <Button
                 android:id="@+id/warehouse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/grassgreen"
+                android:layout_marginTop="10dp"
                 android:text="仓库管理"
                 android:textSize="18dp" />
 
