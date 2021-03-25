@@ -88,6 +88,9 @@
                 <category android:name="com.luna.application" />
             </intent-filter>
         </receiver>
+        <activity
+                android:name=".sensor.SensorActivity"
+                android:label="传感器" />
     </application>
 
 </manifest>

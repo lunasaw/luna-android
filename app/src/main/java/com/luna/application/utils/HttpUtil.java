@@ -311,8 +311,7 @@ public class HttpUtil {
      * @return url Url without query parameters
      * @throws IOException
      */
-    static public String removeQueryParams(String url)
-        throws IOException {
+    static public String removeQueryParams(String url) {
         int q = url.indexOf('?');
         if (q != -1) {
             return url.substring(0, q);
@@ -415,12 +414,9 @@ public class HttpUtil {
                 finalString = postJson(url, body);
             }
             String finalStr = finalString;
-            activity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    onHttpResponseListener.onGetString(finalStr);
-                }
-            });
+            activity.runOnUiThread(new Thread(() -> {
+                onHttpResponseListener.onGetString(finalStr);
+            }));
         } catch (IOException e) {
             ToastUtil.showMsg(activity, "请检查你的网络连接");
         }
@@ -436,35 +432,23 @@ public class HttpUtil {
      */
     public static void post(final Activity activity, final String url, String body,
         final OnHttpResponseListener onHttpResponseListener) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                post(activity, url,
-                    ImmutableMap.of("accept", "*/*", "connection", "Keep-Alive", "charset", "utf-8"),
-                    null, body, onHttpResponseListener);
-
-            }
+        new Thread(() -> {
+            post(activity, url,
+                ImmutableMap.of("accept", "*/*", "connection", "Keep-Alive", "charset", "utf-8"),
+                null, body, onHttpResponseListener);
         }).start();
     }
 
     public static void postJson(final Activity activity, final String url, String body,
         final OnHttpResponseListener onHttpResponseListener) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                try {
-                    String s = postJson(url, body);
-                    activity.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            onHttpResponseListener.onGetString(s);
-                        }
-                    });
-                } catch (IOException e) {
-                    ToastUtil.showMsg(activity, "请检查你的网络连接");
-                }
+        new Thread(() -> {
+            try {
+                String s = postJson(url, body);
+                activity.runOnUiThread(new Thread(() -> {
+                    onHttpResponseListener.onGetString(s);
+                }));
+            } catch (IOException e) {
+                ToastUtil.showMsg(activity, "请检查你的网络连接");
             }
         }).start();
     }
@@ -480,12 +464,8 @@ public class HttpUtil {
      */
     public static void post(final Activity activity, final String url, Map<String, String> header, String body,
         final OnHttpResponseListener onHttpResponseListener) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                post(activity, url, header, null, body, onHttpResponseListener);
-            }
+        new Thread(() -> {
+            post(activity, url, header, null, body, onHttpResponseListener);
         }).start();
     }
 
@@ -500,13 +480,9 @@ public class HttpUtil {
      */
     public static void postParam(final Activity activity, final String url, Map<String, String> param, String body,
         final OnHttpResponseListener onHttpResponseListener) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                post(activity, url, ImmutableMap.of("accept", "*/*", "connection", "Keep-Alive", "charset", "utf-8"),
-                    param, null, onHttpResponseListener);
-            }
+        new Thread(() -> {
+            post(activity, url, ImmutableMap.of("accept", "*/*", "connection", "Keep-Alive", "charset", "utf-8"),
+                param, null, onHttpResponseListener);
         }).start();
     }
 
@@ -520,30 +496,24 @@ public class HttpUtil {
     public static void get(final Activity activity, final String url,
         final OnHttpResponseListener onHttpResponseListener) {
         Log.i(HTTP, "get: " + url);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                get(activity, url, ImmutableMap.of("accept", "*/*", "connection", "Keep-Alive", "charset", "utf-8"),
-                    onHttpResponseListener);
-            }
+        new Thread(() -> {
+            get(activity, url, ImmutableMap.of("accept", "*/*", "connection", "Keep-Alive", "charset", "utf-8"),
+                onHttpResponseListener);
         }).start();
     }
 
     public static void get(final Activity activity, String url, Map<String, String> headers,
         final OnHttpResponseListener onHttpResponseListener) {
+        String finalString = null;
         try {
-            String finalString = get(url, headers);
-            activity.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    onHttpResponseListener.onGetString(finalString);
-                }
-            });
+            finalString = get(url, headers);
         } catch (IOException e) {
             ToastUtil.showMsg(activity, "请检查你的网络连接");
         }
-
+        String finalString1 = finalString;
+        activity.runOnUiThread(new Thread(() -> {
+            onHttpResponseListener.onGetString(finalString1);
+        }));
     }
 
     public interface OnHttpResponseListener {

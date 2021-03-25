@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="15dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:background="@color/beige"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/sensor_x"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="x: " />
+
+        <TextView
+                android:id="@+id/sensor_y"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+
+                android:text="y: " />
+
+        <TextView
+                android:id="@+id/sensor_z"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="z: " />
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:background="@color/beige"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/sensor_step"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:text="step: " />
+
+        <TextView
+                android:id="@+id/sensor_count"
+                android:layout_width="90dp"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:gravity="center"
+                android:text="count: " />
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/beige"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:id="@+id/compassImage"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/compass" />
+    </LinearLayout>
+
+</LinearLayout>
