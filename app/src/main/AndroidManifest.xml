@@ -23,6 +23,7 @@
     <uses-permission
             android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
             tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
             android:name=".LunaApp"
             android:allowBackup="true"
@@ -88,9 +89,13 @@
                 <category android:name="com.luna.application" />
             </intent-filter>
         </receiver>
+
         <activity
                 android:name=".sensor.SensorActivity"
                 android:label="传感器" />
+        <activity
+                android:name=".news.NewsClientActivity"
+                android:label="新闻客户端" />
     </application>
-
+    y
 </manifest>

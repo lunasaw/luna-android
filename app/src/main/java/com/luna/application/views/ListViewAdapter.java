@@ -23,7 +23,7 @@ public class ListViewAdapter extends BaseAdapter {
     private Context            mContext;
     private LayoutInflater     mLayoutInflater;
     private int                size;
-    private List<ImageItemDO>    list;
+    private List<ImageItemDO>  list;
 
     public ListViewAdapter(Context context, List<ImageItemDO> list) {
         this.mContext = context;

@@ -507,13 +507,13 @@ public class HttpUtil {
         String finalString = null;
         try {
             finalString = get(url, headers);
+            String finalString1 = finalString;
+            activity.runOnUiThread(new Thread(() -> {
+                onHttpResponseListener.onGetString(finalString1);
+            }));
         } catch (IOException e) {
-            ToastUtil.showMsg(activity, "请检查你的网络连接");
+            throw new RuntimeException(e);
         }
-        String finalString1 = finalString;
-        activity.runOnUiThread(new Thread(() -> {
-            onHttpResponseListener.onGetString(finalString1);
-        }));
     }
 
     public interface OnHttpResponseListener {

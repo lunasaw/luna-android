@@ -15,6 +15,7 @@ import com.luna.application.dialog.DialogActivity;
 import com.luna.application.file.FileActivity;
 import com.luna.application.fragment.FragmentActivity;
 import com.luna.application.hero.HeroActivity;
+import com.luna.application.news.NewsClientActivity;
 import com.luna.application.sensor.SensorActivity;
 import com.luna.application.utils.NotificationsUtils;
 import com.luna.application.views.exam.ExamActivity;
@@ -65,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button sensorButton;
 
+    private Button clientButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         warehouseButton = findViewById(R.id.warehouse);
         fragmentButton = findViewById(R.id.fragment);
         sensorButton = findViewById(R.id.sensor);
+        clientButton = findViewById(R.id.client);
         setListeners();
 
         if (NotificationsUtils.isNotificationEnabled(this)) {
@@ -122,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         warehouseButton.setOnClickListener(onClick);
         fragmentButton.setOnClickListener(onClick);
         sensorButton.setOnClickListener(onClick);
+        clientButton.setOnClickListener(onClick);
     }
 
     /**
@@ -192,6 +197,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.sensor:
                     intent = new Intent(MainActivity.this, SensorActivity.class);
+                    break;
+                case R.id.client:
+                    intent = new Intent(MainActivity.this, NewsClientActivity.class);
                     break;
             }
             startActivity(intent);
