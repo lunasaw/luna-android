@@ -1,8 +1,11 @@
 package com.luna.application.news;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
@@ -16,6 +19,7 @@ import com.luna.application.api.ApiKey;
 import com.luna.application.entity.NewsDO;
 import com.luna.application.entity.NewsDTO;
 import com.luna.application.utils.HttpUtil;
+import com.luna.application.views.ListViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +39,16 @@ public class NewsClientActivity extends AppCompatActivity {
         newsAdapter = new NewsAdapter(this, list);
         listView.setAdapter(newsAdapter);
         getNewsList("top", 1, 10);
-
+        // 点击事件
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                NewsDO newsDO = list.get(i);
+                Intent intent = new Intent(NewsClientActivity.this, WebViewActivity.class);
+                intent.putExtra("news", newsDO);
+                startActivity(intent);
+            }
+        });
     }
 
     public void getNewsList(String type, int page, int pageSize) {

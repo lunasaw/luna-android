@@ -2,7 +2,9 @@ package com.luna.application.entity;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
-public class NewsDO {
+import java.io.Serializable;
+
+public class NewsDO implements Serializable {
 
     private String uniquekey;
     /**

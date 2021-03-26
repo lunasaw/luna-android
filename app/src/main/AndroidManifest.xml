@@ -96,6 +96,10 @@
         <activity
                 android:name=".news.NewsClientActivity"
                 android:label="新闻客户端" />
+
+        <activity
+                android:name=".news.WebViewActivity"
+                android:label="新闻详情" />
     </application>
     y
 </manifest>
